@@ -1,0 +1,75 @@
+:root {
+  --color-background-hover: #f6f6f6;
+  --color-background-light-darker: #f6f6f6;
+  --color-background-light: #f6f6f6;
+
+  --color-background-nav-darker: #7287fd;
+  --color-background-nav: #414559 !important;
+
+  --color-background-aside: #303446;
+
+  /*^ 게시글 리스트 배경 */
+  --color-background-stared: #f4dbd6;
+  --color-background-unread: #e6e9ef;
+
+  --color-border-light-darker: #3a3a3a;
+  --color-border-light: #4e4e4e;
+
+  --color-text-dark: #4c4f69;
+  --color-text-nav: #374595;
+
+  --frss-background-color: #ffffff;
+  --frss-font-color-dark: #4c4f69;
+
+  --color-background-alert: #e78284;
+}
+
+input,
+select,
+textarea {
+  color: var(--color-text-dark);
+}
+
+.alert-warn,
+.alert-success,
+.alert-error,
+.flux.not_read:not(.active) {
+  background: var(--color-background-unread);
+}
+
+.flux:not(.active):hover,
+.flux.not_read:not(.active):hover {
+  color: var(--color-text-dark);
+}
+
+/* Change unread counts backgrounds + borders and fix alignement */
+.aside_feed .category .title:not([data-unread="0"])::after {
+  border: 1px solid var(--color-background-nav-darker);
+  margin: 0.35rem 0 0 0;
+}
+.aside_feed .category.active .title:not([data-unread="0"])::after {
+  background-color: var(--color-background-nav);
+  border: 1px solid var(--frss-border-color);
+}
+.aside_feed .feed .item-title:not([data-unread="0"])::after {
+  margin: 0.35rem 0 0 0;
+}
+.aside_feed .feed:not(.active) .item-title:not([data-unread="0"])::after {
+  border: 1px solid var(--color-background-nav-darker);
+}
+
+.item.manage,
+/* .flux .item.date, */
+.item.link {
+  display: none;
+}
+.item.website {
+  min-width: 100px;
+  max-width: 150px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.item .title .multiline > a {
+  font-weight: 800;
+}
