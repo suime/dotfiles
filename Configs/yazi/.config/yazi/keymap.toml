@@ -1,0 +1,14 @@
+[[manager.prepend_keymap]]
+on   = [ "g", "d" ]
+run  = "cd ~/Downloads"
+desc = "다운로드 폴더가기"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "D" ]
+run  = "cd ~/dotfiles"
+desc = "/dotfiles 가기"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "f" ]
+run  = 'search_do --via=fd --args="-d 3"'
+desc = "Switch to the flat view with a max depth of 3"

@@ -1,0 +1,75 @@
+{
+    "description": "(⌃⌃ → [Aあ][A가])",
+    "manipulators": [
+        {
+            "conditions": [
+                {
+                    "input_sources": [
+                        {
+                            "language": "^ko$"
+                        }
+                    ],
+                    "type": "input_source_if"
+                }
+            ],
+            "from": {
+                "key_code": "l",
+                "modifiers": {
+                    "mandatory": [
+                        "right_shift",
+                        "right_command",
+                        "right_control",
+                        "right_option"
+                    ]
+                }
+            },
+            "to_if_alone": [
+                {
+                    "select_input_source": {
+                        "language": "^en$"
+                    }
+                },
+                {
+                    "key_code": "vk_none",
+                    "modifiers": []
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "input_sources": [
+                        {
+                            "language": "^en$"
+                        }
+                    ],
+                    "type": "input_source_if"
+                }
+            ],
+            "from": {
+                "key_code": "l",
+                "modifiers": {
+                    "mandatory": [
+                        "right_shift",
+                        "right_command",
+                        "right_control",
+                        "right_option"
+                    ]
+                }
+            },
+            "to_if_alone": [
+                {
+                    "select_input_source": {
+                        "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$"
+                    }
+                },
+                {
+                    "key_code": "vk_none",
+                    "modifiers": []
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}

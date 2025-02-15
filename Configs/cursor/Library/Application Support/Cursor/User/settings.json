@@ -1,0 +1,270 @@
+{
+  "remote.SSH.remotePlatform": {
+    "mldl_R": "linux",
+    "mldl01": "linux",
+    "NAS": "linux"
+  },
+  "workbench.iconTheme": "catppuccin-mocha",
+  "window.zoomLevel": 1,
+  "material-icon-theme.folders.theme": "classic",
+  "explorer.confirmDragAndDrop": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.tabSize": 4,
+    "editor.indentSize": 4
+  },
+  "editor.codeActionsOnSave": {},
+  "editor.snippetSuggestions": "top",
+  "emmet.showSuggestionsAsSnippets": true,
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "update.mode": "start",
+  "workbench.preferredLightColorTheme": "Abyss",
+  "workbench.editorAssociations": {
+    "*.csv": "gc-excelviewer-csv-editor",
+    "*.scpt": "default"
+  },
+  "redhat.telemetry.enabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": false
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "markdownlint.run": "onType",
+  "markdownlint.config": {
+    "MD001": false,
+    "MD007": {
+      "indent": 4
+    },
+    "MD022": false,
+    "MD032": false,
+    "MD041": false,
+    "no-hard-tabs": false
+  },
+  "editor.minimap.size": "fill",
+  "editor.minimap.renderCharacters": false,
+  "terminal.integrated.fontSize": 14,
+  "quarto.render.previewType": "external",
+  "emmet.includeLanguages": {
+    "python": "python"
+  },
+  "editor.minimap.enabled": false,
+  "r.source.encoding": "cp949",
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.enableImages": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "tabnine.experimentalAutoImports": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "autoDocstring.generateDocstringOnEnter": false,
+  "debug.console.acceptSuggestionOnEnter": "on",
+  "vsicons.dontShowNewVersionMessage": true,
+  "polyglot-notebook.defaultNotebookExtension": ".dib",
+  "polyglot-notebook.defaultNotebookLanguage": "markdown",
+  "dataWrangler.debug": true,
+  "dataWrangler.startInEditModeForNotebookEntrypoints": true,
+  "dataWrangler.experiments.fastCsvParsing": true,
+  "files.associations": {
+    "*.rmd": "markdown",
+    "*.wlua": "lua"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.sideBar.location": "right",
+  "bookmarks.label.suggestion": "suggestWhenSelected",
+  "notebook.formatOnCellExecution": true,
+  "notebook.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "workbench.tree.enableStickyScroll": true,
+  "terminal.integrated.stickyScroll.enabled": true,
+  "emmet.preferences": {},
+  "django.snippets.use": false,
+  "settingsSync.ignoredSettings": [
+    "notebook.formatOnSave.enabled",
+    "jupyter.enableExtendedPythonKernelCompletions",
+    "editor.formatOnSave",
+    "editor.formatOnType",
+    "-python.interpreter.infoVisibility"
+  ],
+  "jupyter.completionTriggerCharacters": {
+    "bash": ["$", "{"],
+    "java": [".", "@", "#"],
+    "javascript": [".", "\"", "'", "/", "@"],
+    "python": [".", "%"],
+    "julia": ["."],
+    "r": ["[", "(", ",", "$", "@", "\"", "'"],
+    "rust": [".", ":"],
+    "scala": ["."],
+    "typescript": [".", "\"", "'", "/", "@", "<"]
+  },
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.experiments.enabled": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnSave": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyleInactive": "line",
+  "terminal.integrated.detectLocale": "on",
+  "terminal.integrated.enableVisualBell": true,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "python.globalModuleInstallation": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  "pythonIndent.useTabOnHangingIndent": true,
+  "python.analysis.enablePytestSupport": false,
+  "python.languageServer": "Pylance",
+  "python.analysis.autoFormatStrings": true,
+  "terminal.integrated.tabs.defaultIcon": "vm",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Propo",
+  "terminal.external.osxExec": "iterm2.app",
+  "python.analysis.extraPaths": ["data"],
+  "better-comments.highlightPlainText": true,
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "@",
+      "color": "Black",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FF2D00",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#00C852",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "^",
+      "color": "#E9DE08",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "%",
+      "color": "black",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "#E9DE08",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "#",
+      "color": "black",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FEFEFE",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": "-",
+      "color": "white",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": "<",
+      "color": "#E06C11",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "&",
+      "color": "#F872B5",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    }
+  ],
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "html.preview.scrollPreviewWithEditor": false,
+  "html.preview.scrollEditorWithPreview": false,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "livePreview.customExternalBrowser": "Chrome",
+  "livePreview.debugOnExternalPreview": true,
+  "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "files.autoSave": "onFocusChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.formatOnSave.enabled": true,
+  "editor.linkedEditing": true,
+  "prettier.singleQuote": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "D2Coding ligature,Hack Nerd Font Propo",
+  "editor.fontSize": 14,
+  "window.customTitleBarVisibility": "windowed",
+  "explorer.confirmDelete": false,
+  "git.enableSmartCommit": true,
+  "notebook.output.fontFamily": "d2coding ligature",
+  "notebook.output.minimalErrorRendering": true,
+  "notebook.output.wordWrap": true,
+  "notebook.lineNumbers": "on",
+  "terminal.integrated.defaultProfile.linux": "zsh"
+}

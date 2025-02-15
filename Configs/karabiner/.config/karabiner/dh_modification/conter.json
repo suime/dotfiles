@@ -1,0 +1,212 @@
+{
+  "description": "CapsLock 하이퍼키",
+  "manipulators": [
+    {
+      "description": "sys eng to han",
+      "conditions": [
+        {
+          "input_sources": [
+            {
+              "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+            }
+          ],
+          "type": "input_source_if"
+        }
+      ],
+      "from": {
+        "key_code": "caps_lock",
+        "modifiers": {
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "right_shift",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "to_if_alone": [
+        {
+          "key_code": "spacebar",
+          "modifiers": [
+            "right_command",
+            "right_control",
+            "right_option",
+            "right_shift"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "sys han to eng",
+      "conditions": [
+        {
+          "input_sources": [
+            {
+              "input_source_id": "^com\\.apple\\.inputmethod\\.Korean\\.2SetKorean$"
+            }
+          ],
+          "type": "input_source_if"
+        }
+      ],
+      "from": {
+        "key_code": "caps_lock",
+        "modifiers": {
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "right_shift",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "to_if_alone": [
+        {
+          "key_code": "spacebar",
+          "modifiers": [
+            "right_command",
+            "right_control",
+            "right_option",
+            "right_shift"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "구름 투 시스",
+      "conditions": [
+        {
+          "input_sources": [
+            {
+              "input_source_id": "^org\\.youknowone\\.inputmethod\\.Gureum\\.han2$"
+            }
+          ],
+          "type": "input_source_if"
+        }
+      ],
+      "from": {
+        "key_code": "caps_lock",
+        "modifiers": {
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "right_shift",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "to_if_alone": [
+        {
+          "key_code": "spacebar",
+          "modifiers": [
+            "right_command",
+            "right_control",
+            "right_option",
+            "right_shift"
+          ]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "delete_or_backspace",
+        "modifiers": {
+          "mandatory": [
+            "right_shift",
+            "right_command",
+            "right_control",
+            "right_option"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "delete_forward"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "sys han to eng",
+      "from": {
+        "key_code": "caps_lock",
+        "modifiers": {
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "key_code": "right_shift",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "delete_or_backspace",
+        "modifiers": {
+          "mandatory": [
+            "right_shift",
+            "right_command",
+            "right_control",
+            "right_option"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "delete_forward"
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "시스템 설정",
+      "from": {
+        "key_code": "comma",
+        "modifiers": {
+          "mandatory": [
+            "right_command",
+            "right_control",
+            "right_shift",
+            "right_option"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "comma",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "type": "basic"
+    },
+    {
+      "description": "피리어드",
+      "from": {
+        "key_code": "period",
+        "modifiers": {
+          "mandatory": [
+            "right_command",
+            "right_control",
+            "right_shift",
+            "right_option"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "period",
+          "modifiers": ["right_command", "right_control", "right_option"]
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
