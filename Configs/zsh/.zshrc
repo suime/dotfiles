@@ -4,12 +4,22 @@ fi
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
+for dir in ~/dotfiles/Configs/zsh/exports ~/dotfiles/Configs/zsh/alias; do
+  for file in "$dir"/*; do
+    source "$file"
+  done
+done
+unset dir
+unset file
+
+
+
 # Tuckr 
 export TUCKR_HOME="/Users/daehyeon/"
 export TUCKR_TARGET="/Users/daehyeon/"
 alias tk="tuckr"
 
-export YAZI_CONFIG_HOME="~/dotfiles/Configs/.config/yazi"
+export YAZI_CONFIG_HOME="~/dotfiles/Configs/yazi"
 
 
 export ZSH="$HOME/.oh-my-zsh"
