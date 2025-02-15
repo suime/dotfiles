@@ -121,7 +121,7 @@
   "python.languageServer": "Pylance",
   "python.analysis.autoFormatStrings": true,
   "terminal.integrated.tabs.defaultIcon": "vm",
-  "terminal.integrated.fontFamily": "Hack Nerd Font Propo",
+  "terminal.integrated.fontFamily": "D2Codingligature Nerd font Propo, Hack Nerd Font Propo",
   "terminal.external.osxExec": "iterm2.app",
   "python.analysis.extraPaths": ["data"],
   "better-comments.highlightPlainText": true,
@@ -257,14 +257,15 @@
   "editor.linkedEditing": true,
   "prettier.singleQuote": true,
   "editor.fontLigatures": true,
-  "editor.fontFamily": "D2Coding ligature,Hack Nerd Font Propo",
+  "editor.fontFamily": "D2Coding ligature, Hack Nerd Font Propo",
   "editor.fontSize": 14,
   "window.customTitleBarVisibility": "windowed",
   "explorer.confirmDelete": false,
   "git.enableSmartCommit": true,
-  "notebook.output.fontFamily": "d2coding ligature",
+  "notebook.output.fontFamily": "D2Codingligature Nerd font Propo",
   "notebook.output.minimalErrorRendering": true,
   "notebook.output.wordWrap": true,
   "notebook.lineNumbers": "on",
-  "terminal.integrated.defaultProfile.linux": "zsh"
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontLigatures": true
 }

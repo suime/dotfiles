@@ -1,14 +1,47 @@
 [[manager.prepend_keymap]]
 on   = [ "g", "d" ]
 run  = "cd ~/Downloads"
-desc = "다운로드 폴더가기"
+desc = "다운로드 폴더"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "D" ]
 run  = "cd ~/dotfiles"
-desc = "/dotfiles 가기"
+desc = "dotfiles "
+
+[[manager.prepend_keymap]]
+on   = [ "g", "w" ]
+run  = "cd ~/workspaces"
+desc = "workspace"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "o" ]
+run  = "cd ~/Obsidian"
+desc = "Obsidian"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "f" ]
 run  = 'search_do --via=fd --args="-d 3"'
-desc = "Switch to the flat view with a max depth of 3"
+desc = "flat 뷰"
+
+# * edit profiles 
+[[manager.prepend_keymap]]
+on   = [ "e", "p" ]
+run  = 'shell "cursor ~/.zshrc"'
+desc = "프로필 편집"
+
+[[manager.prepend_keymap]]
+on   = [ "e", "t" ]
+run  = 'shell "cursor ~/.config/oh-my-posh/dh_theme.toml"'
+desc = "프롬프트 테마 편집"
+
+[[manager.prepend_keymap]]
+on   = [ "e", "a" ]
+run  = 'shell "cursor ~/.zshrc"'
+desc = "오토핫키 편집(윈도우) 수정필요"
+
+# open workspaces
+# open sites 
+# python snippets : 파이썬 명령어 
+# $n (Unix) / %n (Windows): The N-th selected file, starting from 1. e.g. $2 represents the second selected file.
+# $@ (Unix) / %* (Windows): All selected files, i.e. $1, $2, ..., $n.
+# $0 (Unix) / %0 (Windows): The hovered file.

@@ -1,3 +1,5 @@
 [user]
-	email = suime@github.com
-	name = suime
+name = DHP
+email = suime@github.com
+[init]
+defaultBranch = main

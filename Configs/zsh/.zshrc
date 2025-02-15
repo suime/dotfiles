@@ -10,7 +10,6 @@ unset dir
 unset file
 
 
-
 #^ 별칭
 alias ep="cursor ~/.zshrc"
 alias re="source ~/.zshrc"

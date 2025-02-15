@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://ssh-remote+dh_nas/var/services/homes/qkqxk500"
+		}
+	],
+	"remoteAuthority": "ssh-remote+dh_nas",
+	"settings": {}
+}
