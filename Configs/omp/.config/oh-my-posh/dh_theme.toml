@@ -5,30 +5,40 @@ version = 3
 [palette]
 os = "#ACB0BE"
 closer = "p:os"
-pink = "#F5C2E7"
-lavender = "#B4BEFE"
-blue = "#89B4FA"
+rose = "#f5e0dc"
+pink = "#f5c2e7"
+mauve ="#cba6f7"
+red = "#f38ba8"
+marron = "#eba0ac"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
 
 [transient_prompt]
 background = "transparent"
-foreground = "#ffffff"
-template = "{{ .Shell }}> "
+foreground = "p:text"
+template = "\n> "
 
 [[blocks]]
 alignment = "left"
 type = "prompt"
 newline = true
 
-[[blocks.segments]]
-foreground = "p:os"
-style = "plain"
-template = "{{.Icon}} "
-type = "os"
+# [[blocks.segments]]
+# foreground = "p:os"
+# style = "plain"
+# template = "{{.Icon}} "
+# type = "os"
 
 [[blocks.segments]]
 foreground = "p:blue"
 style = "plain"
-template = "dhp >_"
+template = "\ue72f dhp >_"
 type = "session"
 
 [[blocks.segments]]
@@ -36,34 +46,29 @@ foreground = "p:pink"
 style = "plain"
 template = "{{ .Path }} "
 type = "path"
-exclude_folders = [ "~/dotfiles/.*" ]
 
 [blocks.segments.properties]
 folder_icon = "\ue5fe .."
 home_icon = "~"
 style = "agnoster_short"
 
-# https://www.nerdfonts.com/cheat-sheet
-[[blocks.segments]]
-foreground = "p:pink"
-style = "plain"
-template = "{{ .Path }}"
-type = "path"
-include_folders = [ "~/dotfiles/.*" ]
+[blocks.segments.properties.mapped_locations]
+# "~" = "󰉍 "
+"~/dotfiles" = " \uf013 "
+"~/Downloads" = "󰉍 "
 
-[blocks.segments.properties]
-folder_icon = "\uf444 "
-home_icon = "~"
-style = "agnoster_short"
+
+# https://www.nerdfonts.com/cheat-sheet
+
 
 [[blocks.segments]]
 style = "diamond"
 leading_diamond = " "
 trailing_diamond = ""
 foreground = "#193549"
-background = "#ffeb3b"
+background = "p:lavender"
 background_templates = [
-  "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
+  "{{ if or (.Working.Changed) (.Staging.Changed) }}p:blue{{ end }}",
   "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
   "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
   "{{ if gt .Behind 0 }}#B388FB{{ end }}"
@@ -85,10 +90,9 @@ tag_icon = "\uf412 "
 
 [[blocks]]
 alignment = "right"
-filler = ". "
+filler = " . "
 padding = 3
 type = "prompt"
-
 
 [[blocks.segments]]
 type = "python"
@@ -107,6 +111,25 @@ background = "#FF0000"
 playing_icon = " "
 paused_icon = " "
 stopped_icon = " "
+
+[[blocks.segments]]
+type = "battery"
+style = "diamond"
+leading_diamond = " "
+trailing_diamond = ""
+foreground = "#193549"
+background = "#ffeb3b"
+background_templates = [
+  "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+  "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+  "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+]
+template = " {{ .State}} {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} "
+
+[blocks.segments.properties]
+discharging_icon = " "
+charging_icon = " "
+charged_icon = " "
 
 # 프롬프트 라인 
 [[blocks]]
