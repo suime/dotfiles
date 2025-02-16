@@ -5,7 +5,7 @@ function ga { git add . }
 
 function gc { param($m) git commit -m "$m" }
 
-function gp { git push }
+function gpus { git push }
 
 function g { z Github }
 

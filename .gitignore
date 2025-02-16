@@ -1,0 +1,24 @@
+# heavy files
+local/
+rust/
+nix/
+omz/
+api/
+cargo/
+mail/
+
+
+id.ahk
+._*
+
+
+cache/
+log/
+.swp
+.DS_Store
+
+.vscode
+.idea
+*_history
+*.zwc
+*.zcompdump
