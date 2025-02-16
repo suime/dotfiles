@@ -181,8 +181,6 @@ function global:__zoxide_zi {
 }
 
 
-
-
 # Utility Functions
 function Test-CommandExists {
     param($command)

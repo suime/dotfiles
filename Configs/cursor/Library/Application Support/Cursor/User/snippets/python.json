@@ -1,433 +1,246 @@
-\{
-	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
-	// 링크 : https://code.visualstudio.com/docs/editor/userdefinedsnippets
-	// - 플레이스홀더 : $1 
-	// - 플레이스홀더에 대명사  : ${1:label}
-	// - 옵션 주기 ${1|'utf-8','EUC-KR'|}
-	"SSL 에러": {
-		"prefix": "pip install",
-		"body": [
-			"pip install $1 --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org;",
-		],
-		"description": "인터넷망에서 안될때"
-	},
-	"pandas": {
-		"prefix": ["import pandas", "imp"]
-		"body": [
-			"import pandas as pd",
-			"import warnings",
-			"warnings.simplefilter('ignore')"
-		],
-		"description": "판다스"
-	},
-	"bertopic": {
-		"prefix": "import bertopic",
-		"body": [
-			"from bertopic import BERTopic",
-			"from sklearn.feature_extraction.text import CountVectorizer,util",
-			"",
-			"# embedding_model='sentence-transformers/paraphrase-multilingual-mpnet-base-v2'",
-			"embedding_model = 'ko-sroberta-multitask'",
-			"",
-			"vectorizer = CountVectorizer(max_features=1000, ngram_range=(2,2))",
-			"",
-			"topic_model = BERTopic(embedding_model=embedding_model, vectorizer_model=vectorizer, nr_topics='auto')",
-		],
-		"description": "판다스"
-	},
-	"plotly.go": {
-		"prefix": "import plotly",
-		"body": [
-			"import plotly.graph_objects as go",
-			"import plotly.express as px",
-			"pio.templates.default = ${1|'ggplot2','seaborn','simple_white','plotly','plotly_white','plotly_dark','presentation','xgridoff','ygridoff','gridon','none'|}"
-		],
-		"description": "플롯틀리 "
-	},
-	"theme": {
-		"prefix": [
-			"pio",
-			"theme",
-			"테마"
-		],
-		"body": [
-			"pio.templates.default = ${1|'ggplot2','seaborn','simple_white','plotly','plotly_white','plotly_dark','presentation','xgridoff','ygridoff','gridon','none'|}"
-		],
-		"description": "플롯틀리 "
-	},
-	"상용문구": {
-		"prefix": "요일",
-		"body": [
-			"요일 = ['월', '화', '수', '목', '금', '토', '일']"
-		],
-		"description": "요일목록 "
-	},
-	"csv 인덱스 ": {
-		"prefix": "index",
-		"body": [
-			"index=False"
-		],
-		"description": "to_csv"
-	},
-	"내림차순": {
-		"prefix": [
-			"ascending",
-			"ㅁㄴㅊ",
-		],
-		"body": [
-			"ascending=False"
-		],
-		"description": "내림차순"
-	},
-	"pd.read ": {
-		"prefix": [
-			"pd.read_csv",
-			"pdread",
-			"ㅔㅇㄱㄷㅁㅇ"
-		],
-		"body": [
-			"pd.read_${1|csv,parquet|}('$2')"
-		],
-		"description": "read_someThing"
-	},
-	"pd.to ": {
-		"prefix": [
-			".to_csv",
-			".to",
-			".ㅅㅐ",
-			".세"
-		],
-		"body": [
-			".to_${1|csv,parquet,excel|}('$2.$1', index = False)"
-		],
-		"description": "to_someThing"
-	},
-	"encoding= ": {
-		"prefix": "encoding=",
-		"body": [
-			"encoding=${1|'UTF-8','EUC-KR'|}"
-		],
-		"description": "코딩"
-	},
-	"kiwi": {
-		"prefix": "import kiwipiepy",
-		"body": [
-			"from kiwipiepy import Kiwi",
-			"kiwi = Kiwi()"
-		],
-		"description": "키위패키지"
-	},
-	"wordcloud": {
-		"prefix": "import wordcloud",
-		"body": [
-			"from wordcloud import WordCloud"
-		],
-		"description": "워드클라우드 패키지"
-	},
-	"설명은?": {
-		"prefix": "desc ㅇㄷㄴ",
-		"body": [
-			"description='$1'",
-		],
-		"description": "디스크립션"
-	},
-	"agg": {
-		"prefix": ".agg",
-		"body": [
-			".agg(건수 = ('$1', 'count')).reset_index()",
-		],
-		"description": "건수"
-	},
-	"format": {
-		"prefix": "format",
-		"body": [
-			".apply(lambda x : '{:,.0f}'.format(x))",
-		],
-		"description": "세자리마다 쉼표 넣기"
-	},
-	"query": {
-		"prefix": [
-			".qq",
-			".ㅂㅂ"
-		],
-		"body": [
-			".query(\"$1 == $2\")",
-		],
-		"description": "쿼리"
-	},
-	"그룹바이": {
-		"prefix": [
-			".groupby",
-			".ㅎㄱㅐㅕㅔ"
-		],
-		"body": [
-			".groupby([$1]).agg(건수 = ('$2','count')).reset_index()",
-		],
-		"description": "그룹바이"
-	},
-	"딕셔너리": {
-		"prefix": [
-			"ㅇㅇ",
-			"dd"
-		],
-		"body": [
-			"dict($1 = $2),",
-		],
-		"description": "딕셔너리"
-	},
-	"영어오타": {
-		"prefix": [
-			"샤싣",
-			"title"
-		],
-		"body": [
-			"title = '$1',",
-		],
-		"description": "타이틀"
-	},
-	"width": {
-		"prefix": [
-			"width",
-			"쟝소"
-		],
-		"body": [
-			"width = '$1',",
-		],
-		"description": "두께"
-	},
-	"lambda": {
-		"prefix": [
-			"lambda",
-			"ㅣㅣ",
-			"ll"
-		],
-		"body": [
-			"lambda x : x",
-		],
-		"description": "람다"
-	},
-	"True": {
-		"prefix": [
-			"True",
-			"TT",
-			"ㅅㄱㅕㄷ",
-			"ㅅㅅ",
-			"ㅆㅆ"
-		],
-		"body": [
-			"True",
-		],
-		"description": "트루"
-	},
-	"False": {
-		"prefix": [
-			"False",
-			"FF",
-			"ㄹㅁㅣㄴㄷ",
-			"ㄹㄹ"
-		],
-		"body": [
-			"False",
-		],
-		"description": "펄스"
-	},
-	"xy": {
-		"prefix": [
-			"x=",
-			"y=",
-			"xx"
-		],
-		"body": [
-			"x = '$1', y = '$2'",
-		],
-		"description": "xy"
-	},
-	"pivot": {
-		"prefix": [
-			"pivot",
-			"ㅔㅑㅍ"
-		],
-		"body": [
-			"pivot(values='${1:값}', index='${2:행}', columns='${3:열}')",
-		],
-		"description": "데이터프레임 피봇"
-	},
-	"st": {
-		"prefix": [
-			"import streamlit",
-			"스트림릿"
-		],
-		"body": [
-			"import streamlit as st",
-			"import streamlit_extras",
-			"st.set_page_config(",
-			"\tpage_title='키워드 분석',",
-			"\tpage_icon='☁',",
-			"\tlayout='wide',",
-			"\tinitial_sidebar_state='expanded',",
-			"\tmenu_items={'About':'$1'})",
-		],
-		"description": "스트림릿"
-	},
-	"with": {
-		"prefix": [
-			"with",
-			"쟈소"
-		],
-		"body": [
-			"with $1:",
-		],
-		"description": "스트림릿"
-	},
-	"st.button": {
-		"prefix": [
-			"st.button",
-			"st.bb",
-			"ㄴㅅ.ㅠㅠ"
-		],
-		"body": [
-			"st.button('$1', type = ${2|'primary','secondary'|})",
-		],
-		"description": "스트림릿 버튼"
-	},
-	"st.session_state": {
-		"prefix": [
-			"st.session_state",
-			"sss",
-			"ㄴㄴㄴ"
-		],
-		"body": [
-			"st.session_state.",
-		],
-		"description": "스트림릿 버튼"
-	},
-	"use_container_width": {
-		"prefix": [
-			"use_",
-			"ㅕㄴㄷ"
-		],
-		"body": [
-			"use_container_width=True",
-		],
-		"description": "스트림릿 버튼"
-	},
-	// "print": {
-	// "prefix": ["print", "pp", "ㅔㅔ"]
-	// "body": [
-	// 	"print($1)",
-	// ],
-	// "description": "프린트"
-	// },
-	"크롤링": {
-		"prefix": [
-			"import request",
-			"크롤링"
-		],
-		"body": [
-			"import requests",
-			"from bs4 import BeautifulSoup",
-			"from parsel import Selector",
-			"html = requests.get(url, verify=False).text",
-			"soup = BeautifulSoup(html, 'html.parser')",
-			"text = soup.select('.view_cont li')",
-		],
-		"description": "크롤링용 코드"
-	},
-	"데이터프레임 셀렉트": {
-		"prefix": [
-			"filter",
-			"랴ㅣㅅㄷㄱ"
-		],
-		"body": [
-			"filter(regex='^(?!$1|$2)')",
-		],
-		"description": "포함되지 않을 열"
-	},
-	"프린트 바로": {
-		"prefix": [
-			"pp",
-			"ㅔㅔ"
-		],
-		"body": [
-			"print(${TM_SELECTED_TEXT})",
-		],
-		"description": "프린트 바로하기"
-	},
-	"리턴": {
-		"prefix": [
-			"ㄱㄱ",
-			"rr"
-		],
-		"body": [
-			"return $1",
-		],
-		"description": "리턴"
-	},
-	"parquet": {
-		"prefix": [
-			"parquet",
-			"ㅔㅁㄱ볃ㅅ"
-		],
-		"body": [
-			"parquet",
-		],
-		"description": "파큇"
-	},
-	"values_counts": {
-		"prefix": [
-			".ㅍㅁ",
-			".ㅍ미",
-			".value"
-		],
-		"body": [
-			".value_counts()",
-		],
-		"description": "발루카운트"
-	},
-	"pd.Grouper": {
-		"prefix": [
-			"pd.Grouper",
-			"Grouper",
-			"ㅔㅇ.ㅎ개ㅕㅔㄷㄱ"
-		],
-		"body": [
-			"pd.Grouper(key = $1, freq = 'ME')",
-		],
-		"description": "그루퍼"
-	},
+{
+  "SSL 에러": {
+    "prefix": "pip install",
+    "body": [
+      "pip install $1 --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org;"
+    ],
+    "description": "인터넷망에서 안될때"
+  },
+  "pandas": {
+    "prefix": ["import pandas", "imp"],
+    "body": [
+      "import pandas as pd",
+      "import warnings",
+      "warnings.simplefilter('ignore')"
+    ],
+    "description": "판다스"
+  },
+  "bertopic": {
+    "prefix": "import bertopic",
+    "body": [
+      "from bertopic import BERTopic",
+      "from sklearn.feature_extraction.text import CountVectorizer,util",
+      "",
+      "# embedding_model='sentence-transformers/paraphrase-multilingual-mpnet-base-v2'",
+      "embedding_model = 'ko-sroberta-multitask'",
+      "",
+      "vectorizer = CountVectorizer(max_features=1000, ngram_range=(2,2))",
+      "",
+      "topic_model = BERTopic(embedding_model=embedding_model, vectorizer_model=vectorizer, nr_topics='auto')"
+    ],
+    "description": "판다스"
+  },
+  "plotly.go": {
+    "prefix": "import plotly",
+    "body": [
+      "import plotly.graph_objects as go",
+      "import plotly.express as px",
+      "pio.templates.default = ${1|'ggplot2','seaborn','simple_white','plotly','plotly_white','plotly_dark','presentation','xgridoff','ygridoff','gridon','none'|}"
+    ],
+    "description": "플롯틀리 "
+  },
+  "theme": {
+    "prefix": ["pio", "theme", "테마"],
+    "body": [
+      "pio.templates.default = ${1|'ggplot2','seaborn','simple_white','plotly','plotly_white','plotly_dark','presentation','xgridoff','ygridoff','gridon','none'|}"
+    ],
+    "description": "플롯틀리 "
+  },
+  "상용문구": {
+    "prefix": "요일",
+    "body": ["요일 = ['월', '화', '수', '목', '금', '토', '일']"],
+    "description": "요일목록 "
+  },
+  "csv 인덱스 ": {
+    "prefix": "index",
+    "body": ["index=False"],
+    "description": "to_csv"
+  },
+  "내림차순": {
+    "prefix": ["ascending", "ㅁㄴㅊ"],
+    "body": ["ascending=False"],
+    "description": "내림차순"
+  },
+  "pd.read ": {
+    "prefix": ["pd.read_csv", "pdread", "ㅔㅇㄱㄷㅁㅇ"],
+    "body": ["pd.read_${1|csv,parquet|}('$2')"],
+    "description": "read_someThing"
+  },
+  "pd.to ": {
+    "prefix": [".to_csv", ".to", ".ㅅㅐ", ".세"],
+    "body": [".to_${1|csv,parquet,excel|}('$2.$1', index = False)"],
+    "description": "to_someThing"
+  },
+  "encoding= ": {
+    "prefix": "encoding=",
+    "body": ["encoding=${1|'UTF-8','EUC-KR'|}"],
+    "description": "코딩"
+  },
+  "kiwi": {
+    "prefix": "import kiwipiepy",
+    "body": ["from kiwipiepy import Kiwi", "kiwi = Kiwi()"],
+    "description": "키위패키지"
+  },
+  "wordcloud": {
+    "prefix": "import wordcloud",
+    "body": ["from wordcloud import WordCloud"],
+    "description": "워드클라우드 패키지"
+  },
+  "설명은?": {
+    "prefix": "desc ㅇㄷㄴ",
+    "body": ["description='$1'"],
+    "description": "디스크립션"
+  },
+  "agg": {
+    "prefix": ".agg",
+    "body": [".agg(건수 = ('$1', 'count')).reset_index()"],
+    "description": "건수"
+  },
+  "format": {
+    "prefix": "format",
+    "body": [".apply(lambda x : '{:,.0f}'.format(x))"],
+    "description": "세자리마다 쉼표 넣기"
+  },
+  "query": {
+    "prefix": [".qq", ".ㅂㅂ"],
+    "body": [".query(\"$1 == $2\")"],
+    "description": "쿼리"
+  },
+  "그룹바이": {
+    "prefix": [".groupby", ".ㅎㄱㅐㅕㅔ"],
+    "body": [".groupby([$1]).agg(건수 = ('$2','count')).reset_index()"],
+    "description": "그룹바이"
+  },
+  "딕셔너리": {
+    "prefix": ["ㅇㅇ", "dd"],
+    "body": ["dict($1 = $2),"],
+    "description": "딕셔너리"
+  },
+  "영어오타": {
+    "prefix": ["샤싣", "title"],
+    "body": ["title = '$1',"],
+    "description": "타이틀"
+  },
+  "width": {
+    "prefix": ["width", "쟝소"],
+    "body": ["width = '$1',"],
+    "description": "두께"
+  },
+  "lambda": {
+    "prefix": ["lambda", "ㅣㅣ", "ll"],
+    "body": ["lambda x : x"],
+    "description": "람다"
+  },
+  "True": {
+    "prefix": ["True", "TT", "ㅅㄱㅕㄷ", "ㅅㅅ", "ㅆㅆ"],
+    "body": ["True"],
+    "description": "트루"
+  },
+  "False": {
+    "prefix": ["False", "FF", "ㄹㅁㅣㄴㄷ", "ㄹㄹ"],
+    "body": ["False"],
+    "description": "펄스"
+  },
+  "xy": {
+    "prefix": ["x=", "y=", "xx"],
+    "body": ["x = '$1', y = '$2'"],
+    "description": "xy"
+  },
+  "pivot": {
+    "prefix": ["pivot", "ㅔㅑㅍ"],
+    "body": ["pivot(values='${1:값}', index='${2:행}', columns='${3:열}')"],
+    "description": "데이터프레임 피봇"
+  },
+  "st": {
+    "prefix": ["import streamlit", "스트림릿"],
+    "body": [
+      "import streamlit as st",
+      "import streamlit_extras",
+      "st.set_page_config(",
+      "\tpage_title='키워드 분석',",
+      "\tpage_icon='☁',",
+      "\tlayout='wide',",
+      "\tinitial_sidebar_state='expanded',",
+      "\tmenu_items={'About':'$1'})"
+    ],
+    "description": "스트림릿"
+  },
+  "with": {
+    "prefix": ["with", "쟈소"],
+    "body": ["with $1:"],
+    "description": "스트림릿"
+  },
+  "st.button": {
+    "prefix": ["st.button", "st.bb", "ㄴㅅ.ㅠㅠ"],
+    "body": ["st.button('$1', type = ${2|'primary','secondary'|})"],
+    "description": "스트림릿 버튼"
+  },
+  "st.session_state": {
+    "prefix": ["st.session_state", "sss", "ㄴㄴㄴ"],
+    "body": ["st.session_state."],
+    "description": "스트림릿 버튼"
+  },
+  "use_container_width": {
+    "prefix": ["use_", "ㅕㄴㄷ"],
+    "body": ["use_container_width=True"],
+    "description": "스트림릿 버튼"
+  },
+  "크롤링": {
+    "prefix": ["import request", "크롤링"],
+    "body": [
+      "import requests",
+      "from bs4 import BeautifulSoup",
+      "from parsel import Selector",
+      "html = requests.get(url, verify=False).text",
+      "soup = BeautifulSoup(html, 'html.parser')",
+      "text = soup.select('.view_cont li')"
+    ],
+    "description": "크롤링용 코드"
+  },
+  "데이터프레임 셀렉트": {
+    "prefix": ["filter", "랴ㅣㅅㄷㄱ"],
+    "body": ["filter(regex='^(?!$1|$2)')"],
+    "description": "포함되지 않을 열"
+  },
+  "프린트 바로": {
+    "prefix": ["pp", "ㅔㅔ"],
+    "body": ["print(${TM_SELECTED_TEXT})"],
+    "description": "프린트 바로하기"
+  },
+  "리턴": {
+    "prefix": ["ㄱㄱ", "rr"],
+    "body": ["return $1"],
+    "description": "리턴"
+  },
+  "parquet": {
+    "prefix": ["parquet", "ㅔㅁㄱ볃ㅅ"],
+    "body": ["parquet"],
+    "description": "파큇"
+  },
+  "values_counts": {
+    "prefix": [".ㅍㅁ", ".ㅍ미", ".value"],
+    "body": [".value_counts()"],
+    "description": "발루카운트"
+  },
+  "pd.Grouper": {
+    "prefix": ["pd.Grouper", "Grouper", "ㅔㅇ.ㅎ개ㅕㅔㄷㄱ"],
+    "body": ["pd.Grouper(key = $1, freq = 'ME')"],
+    "description": "그루퍼"
+  },
 
-	"상용단어1": {
-		"prefix": ["채ㅣ", "coll"],
-		"body": [
-			"column",
-		],
-		"description": "칼럼"
-	},
-	"plcol": {
-		"prefix": ["pll", "ㅔㅣㅣ"],
-		"body": [
-			"pl.col('$1')",
-		],
-		"description": "칼럼"
-	},
-	"import polars": {
-		"prefix": ["import polars"],
-		"body": [
-			"import polars as pl"
-		],
-		"description": "폴라스 임포트"
-	},
+  "상용단어1": {
+    "prefix": ["채ㅣ", "coll"],
+    "body": ["column"],
+    "description": "칼럼"
+  },
+  "plcol": {
+    "prefix": ["pll", "ㅔㅣㅣ"],
+    "body": ["pl.col('$1')"],
+    "description": "칼럼"
+  },
+  "import polars": {
+    "prefix": ["import polars"],
+    "body": ["import polars as pl"],
+    "description": "폴라스 임포트"
+  }
 }
-
