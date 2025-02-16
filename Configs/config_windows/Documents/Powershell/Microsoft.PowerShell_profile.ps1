@@ -325,6 +325,10 @@ Set-PSReadLineOption -Colors @{
 
 
 ## 컨피그 파일 빠른 편집
+
+# $set:TUCKR_HOME="$"
+# $set:TUCKR_TARGET="$HOME"
+
 # 오토핫키
 function ea { vim "C:\Users\박대현\Documents\configs\ahk\DH_auto.ahk" }
 
@@ -345,4 +349,4 @@ Set-Alias -Name zi -Value __zoxide_zi -Option AllScope -Scope Global -Force
 Set-Alias -Name tk -Value tuckr
 
 ## Final Line to set prompt
-oh-my-posh --init --config 'C:\Users\박대현\Documents\Powershell\dh_theme.json' | Invoke-Expression
+oh-my-posh --init --config 'C:\Users\박대현\.config\oh-my-posh\dh_theme.toml' | Invoke-Expression
