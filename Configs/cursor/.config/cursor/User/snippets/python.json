@@ -3,15 +3,6 @@
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
 	// 링크 : https://code.visualstudio.com/docs/editor/userdefinedsnippets
 	// - 플레이스홀더 : $1 
 	// - 플레이스홀더에 대명사  : ${1:label}
@@ -323,13 +314,6 @@
 		],
 		"description": "스트림릿 버튼"
 	},
-	// "print": {
-	// "prefix": ["print", "pp", "ㅔㅔ"]
-	// "body": [
-	// 	"print($1)",
-	// ],
-	// "description": "프린트"
-	// },
 	"크롤링": {
 		"prefix": [
 			"import request",
@@ -408,13 +392,7 @@
 		"description": "그루퍼"
 	},
 
-	"상용단어1": {
-		"prefix": ["채ㅣ", "coll"],
-		"body": [
-			"column",
-		],
-		"description": "칼럼"
-	},
+
 
 	"plotly subplot": {
 		"prefix": ["subplot", "녀ㅠㅔㅣㅐㅅ"],
@@ -442,4 +420,24 @@
 		],
 		"description": "polars when "
 	},
+	  "cell": {
+    "prefix": ["///", "###"],
+    "body": ["${TM_SELECTED_TEXT/(# %%\\s*)(.+)|(.+)/$2${3:+# %% }$3/}"],
+    "description": "py cell 만들기"
+  },
+
+  "divider": {
+    "prefix": ["---"],
+    "body": [
+      "# ---------------------------- $1 ----------------------------",
+      "$2"
+    ],
+    "description": "divider 만들기"
+  },
+
+  "print": {
+    "prefix": ["pp", "ㅔㅔ"],
+    "body": ["print(f'$1')"],
+    "description": "빠른 프린트문 만들기"
+  }
 }

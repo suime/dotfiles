@@ -10,7 +10,7 @@ mail/
 
 id.ahk
 ._*
-
+.DS_Store
 
 cache/
 log/
