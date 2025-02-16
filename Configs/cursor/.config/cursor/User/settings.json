@@ -1,103 +1,175 @@
 {
-    "window.commandCenter": true,
-    "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Catppuccin Macchiato",
-    "workbench.iconTheme": "catppuccin-macchiato",
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
-    "editor.fontFamily": "D2CodingLigature Nerd Font Propo, Consolas, 'Courier New', monospace",
-    "notebook.output.fontFamily": "D2CodingLigature Nerd Font Propo",
-    "editor.fontLigatures": true,
-    "better-comments.tags": [
-        {
-            // %% 파이썬 셀 제목 강조 
-            "tag": "%%",
-            "color": "#000",
-            "strikethrough": false,
-            "underline": true,
-            "backgroundColor": "white",
-            "bold": true,
-            "italic": false
-        },
-        {
-            "tag": "!",
-            "color": "#FF2D00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "-",
-            "color": "#FF2D00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "?",
-            "color": "#3498DB",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "//",
-            "color": "#474747",
-            "strikethrough": true,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "todo",
-            "color": "#FF8C00",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
-        {
-            "tag": "*",
-            "color": "#98C379",
-            "strikethrough": false,
-            "underline": false,
-            "backgroundColor": "transparent",
-            "bold": false,
-            "italic": false
-        },
+    "remote.SSH.remotePlatform": {
+        "mldl_R": "linux",
+        "mldl01": "linux",
+        "NAS": "linux"
+    },
+    "workbench.iconTheme": "catppuccin-mocha",
+    "material-icon-theme.folders.theme": "classic",
+    "explorer.confirmDragAndDrop": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+        "editor.tabSize": 4,
+        "editor.indentSize": 4
+    },
+    "editor.codeActionsOnSave": {},
+    "editor.snippetSuggestions": "top",
+    "emmet.showSuggestionsAsSnippets": true,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
     ],
-    "better-comments.highlightPlainText": true,
+    "[html]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "security.allowedUNCHosts": [
+        "Modern_park"
+    ],
+    "window.zoomLevel": 1,
+    "update.mode": "start",
+    "workbench.preferredLightColorTheme": "Abyss",
+    "workbench.editorAssociations": {
+        "*.csv": "gc-excelviewer-csv-editor"
+    },
+    "redhat.telemetry.enabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnSave": false
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "markdownlint.run": "onType",
+    "markdownlint.config": {
+        "MD001": false,
+        "MD007": {
+            "indent": 4
+        },
+        "MD022": false,
+        "MD032": false,
+        "MD041": false,
+        "no-hard-tabs": false
+    },
+    "editor.minimap.size": "fill",
+    "editor.minimap.renderCharacters": false,
+    "terminal.integrated.fontSize": 15,
+    "quarto.render.previewType": "external",
+    "emmet.includeLanguages": {
+        "python": "python"
+    },
+    "editor.minimap.enabled": false,
+    "r.source.encoding": "cp949",
+    "editor.accessibilitySupport": "off",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.enableImages": true,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "tabnine.experimentalAutoImports": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "autoDocstring.generateDocstringOnEnter": false,
+    "debug.console.acceptSuggestionOnEnter": "on",
+    "vsicons.dontShowNewVersionMessage": true,
+    "polyglot-notebook.defaultNotebookExtension": ".dib",
+    "polyglot-notebook.defaultNotebookLanguage": "markdown",
+    "dataWrangler.debug": true,
+    "dataWrangler.startInEditModeForNotebookEntrypoints": true,
+    "dataWrangler.experiments.fastCsvParsing": true,
+    "files.associations": {
+        "*.rmd": "markdown"
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.sideBar.location": "right",
+    "bookmarks.label.suggestion": "suggestWhenSelected",
+    "notebook.formatOnCellExecution": true,
+    "notebook.stickyScroll.enabled": true,
+    "editor.stickyScroll.enabled": true,
+    "workbench.tree.enableStickyScroll": true,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "emmet.preferences": {},
+    "django.snippets.use": false,
+    "settingsSync.ignoredSettings": [
+        "notebook.formatOnSave.enabled",
+        "jupyter.enableExtendedPythonKernelCompletions",
+        "editor.formatOnSave",
+        "editor.formatOnType",
+        "-python.interpreter.infoVisibility"
+    ],
+    "jupyter.completionTriggerCharacters": {
+        "bash": [
+            "$",
+            "{"
+        ],
+        "java": [
+            ".",
+            "@",
+            "#"
+        ],
+        "javascript": [
+            ".",
+            "\"",
+            "'",
+            "/",
+            "@"
+        ],
+        "python": [
+            ".",
+            "%"
+        ],
+        "julia": [
+            "."
+        ],
+        "r": [
+            "[",
+            "(",
+            ",",
+            "$",
+            "@",
+            "\"",
+            "'"
+        ],
+        "rust": [
+            ".",
+            ":"
+        ],
+        "scala": [
+            "."
+        ],
+        "typescript": [
+            ".",
+            "\"",
+            "'",
+            "/",
+            "@",
+            "<"
+        ]
+    },
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "jupyter.enableExtendedPythonKernelCompletions": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "notebook.formatOnSave.enabled": true,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "line",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "python.defaultInterpreterPath": "C:\\ProgramData\\miniconda3\\envs\\tensor_test\\python.exe",
+    "terminal.integrated.detectLocale": "on",
+    "terminal.integrated.enableVisualBell": true,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "python.globalModuleInstallation": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "pythonIndent.trimLinesWithOnlyWhitespace": true,
+    "pythonIndent.useTabOnHangingIndent": true,
     "python.analysis.enablePytestSupport": false,
     "python.languageServer": "Pylance",
     "python.analysis.autoFormatStrings": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.inlayHints.callArgumentNames": "partial",
-    "notebook.formatOnCellExecution": true,
-    "notebook.formatOnSave.enabled": true,
-    "window.confirmSaveUntitledWorkspace": false,
-    "git.openRepositoryInParentFolders": "never",
-    "launch": {
-        "configurations": []
-    },
     "terminal.integrated.fontFamily": "D2CodingLigature Nerd Font Propo",
-    "terminal.integrated.fontLigatures": true,
-    "debug.console.fontFamily": "D2CodingLigature Nerd Font Propo"
+    "editor.inlayHints.fontFamily": "D2CodingLigatureNerdFontPropo",
+    "notebook.output.fontFamily": "D2CodingLigature Nerd Font Propo",
+    "editor.fontFamily": "D2CodingLigature Nerd Font Propo, Consolas, 'Courier New', monospace",
+    "debug.console.fontFamily": "D2CodingLigature Nerd Font Propo",
+    "editor.inlineSuggest.fontFamily": "D2CodingLigature Nerd Font Propo",
+    "editor.codeLensFontFamily": "D2CodingLigature Nerd Font Propo"
 }

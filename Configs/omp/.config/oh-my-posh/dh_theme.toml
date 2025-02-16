@@ -1,13 +1,15 @@
 schema = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
 final_space = true
 version = 3
+# https://www.nerdfonts.com/cheat-sheet
+
 
 [palette]
 os = "#ACB0BE"
 closer = "p:os"
 rose = "#f5e0dc"
 pink = "#f5c2e7"
-mauve ="#cba6f7"
+mauve = "#cba6f7"
 red = "#f38ba8"
 marron = "#eba0ac"
 yellow = "#f9e2af"
@@ -36,7 +38,7 @@ newline = true
 # type = "os"
 
 [[blocks.segments]]
-foreground = "p:blue"
+foreground = "p:lavender"
 style = "plain"
 template = "\ue72f dhp >_"
 type = "session"
@@ -58,20 +60,17 @@ style = "agnoster_short"
 "~/Downloads" = "󰉍 "
 
 
-# https://www.nerdfonts.com/cheat-sheet
-
-
 [[blocks.segments]]
 style = "diamond"
 leading_diamond = " "
 trailing_diamond = ""
-foreground = "#193549"
+foreground = "transparent"
 background = "p:lavender"
 background_templates = [
   "{{ if or (.Working.Changed) (.Staging.Changed) }}p:blue{{ end }}",
-  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
-  "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-  "{{ if gt .Behind 0 }}#B388FB{{ end }}"
+  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:yellow{{ end }}",
+  "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
+  "{{ if gt .Behind 0 }}p:mauve{{ end }}",
 ]
 template = "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
 type = "git"
@@ -95,20 +94,45 @@ padding = 3
 type = "prompt"
 
 [[blocks.segments]]
-type = "python"
+foreground = "#007ACC"
+template = " {{ .CurrentDate | date .Format }} "
 style = "plain"
+type = "time"
+
+[blocks.segments.properties]
+time_format = "15:04:05"
+
+[[blocks.segments]]
+type = "executiontime"
+style = "diamond"
+leading_diamond = " "
+trailing_diamond = " "
+background = "p:mauve"
+template = " <#fefefe></> {{ .FormattedMs }} "
+
+[blocks.segments.properties]
+threshold = 500
+style = "austin"
+always_enabled = true
+
+[[blocks.segments]]
+type = "python"
+style = "diamond"
+leading_diamond = " "
+trailing_diamond = ""
 foreground = "transparent"
-background = "p:lavender"
-template = "  {{ .Full }} "
+background = "p:blue"
+template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{.Major}}.{{.Minor }}{{ end }} "
 
 [[blocks.segments]]
 type = "ytm"
 style = "plain"
-api_url = "http://localhost:9863/query"
+api_url = "http://127.0.0.1:9863"
 foreground = "#ffffff"
 background = "#FF0000"
 
 [blocks.segments.properties]
+always_enabled = true
 playing_icon = " "
 paused_icon = " "
 stopped_icon = " "
@@ -117,13 +141,13 @@ stopped_icon = " "
 type = "battery"
 style = "diamond"
 leading_diamond = " "
-trailing_diamond = ""
+trailing_diamond = " "
 foreground = "#193549"
 background = "#ffeb3b"
 background_templates = [
   "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
   "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
-  "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+  "{{if eq \"Full\" .State.String}}#4caf50{{end}}",
 ]
 template = " {{ .State}} {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} "
 
@@ -131,6 +155,18 @@ template = " {{ .State}} {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }
 discharging_icon = " "
 charging_icon = " "
 charged_icon = " "
+
+[[blocks.segments]]
+background = "#00897b"
+background_templates = ["{{ if gt .Code 0 }}#e91e63{{ end }}"]
+foreground = "#ffffff"
+template = "<parentBackground></>  "
+style = "diamond"
+trailing_diamond = ""
+type = "status"
+
+[blocks.segments.properties]
+always_enabled = true
 
 # 프롬프트 라인 
 [[blocks]]
@@ -140,9 +176,6 @@ type = "prompt"
 
 [[blocks.segments]]
 style = "plain"
-foreground = "p:closer"
+foreground = "p:text"
 template = "\uf105"
 type = "text"
-
-
-
