@@ -18,6 +18,7 @@ sapphire = "#74c7ec"
 blue = "#89b4fa"
 lavender = "#b4befe"
 text = "#cdd6f4"
+base = "#1e1e2e"
 
 [transient_prompt]
 background = "transparent"
@@ -65,7 +66,7 @@ style = "agnoster_short"
 style = "diamond"
 leading_diamond = " "
 trailing_diamond = ""
-foreground = "#193549"
+foreground = "p:base"
 background = "p:lavender"
 background_templates = [
   "{{ if or (.Working.Changed) (.Staging.Changed) }}p:blue{{ end }}",
