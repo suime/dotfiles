@@ -6,7 +6,7 @@ omz/
 api/
 cargo/
 mail/
-
+config_macos/.ssh
 
 id.ahk
 ._*
@@ -16,6 +16,21 @@ cache/
 log/
 .swp
 .DS_Store
+
+.vscode
+.idea
+*_history
+*.zwc
+*.zcompdump
+# Thumbnail cache files
+._*
+Thumbs.db
+.tmp*
+*.mdb
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
 
 .vscode
 .idea
