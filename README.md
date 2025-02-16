@@ -4,7 +4,7 @@
 ### 윈도우 설치 
 
 ```powershell
-git clone https://github.com/suime/dotfiles.git ~/dotfiles
+git clone https://github.com/suime/dotfiles.git $HOME/dotfiles
 ```
 
 ### 맥 설치 
