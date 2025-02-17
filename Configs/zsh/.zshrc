@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$HOME/.cargo/bin:$PATH
+export PATH=/usr/local/bin:$HOME/.cargo/bin:~/.local/bin:~/.nix-profile/bin:$PATH
 
 # 설정 한방 
 for dir in ~/.config/zsh/{alias,exports,functions}; do
@@ -18,10 +18,12 @@ alias cls="clear"
 alias python="/usr/bin/python3"
 alias pip="/usr/bin/pip3"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+bindkey '^[[D' backward-word  # Ctrl + 좌 방향키
+bindkey '^[[C' forward-word   # Ctrl + 우 방향키
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/dh_theme.toml)"
 
@@ -42,15 +44,15 @@ autoload -Uz _zinit
 # (this is currently required for annexes)
 zinit for \
   light-mode \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust \
     junegunn/fzf \
     Aloxaf/fzf-tab \
     zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting \
     ajeetdsouza/zoxide 
+    # zdharma-continuum/zinit-annex-as-monitor \
+    # zdharma-continuum/zinit-annex-bin-gem-node \
+    # zdharma-continuum/zinit-annex-patch-dl \
+    # zdharma-continuum/zinit-annex-rust \
 
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
