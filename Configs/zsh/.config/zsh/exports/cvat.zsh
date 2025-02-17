@@ -1,0 +1,1 @@
+export CVAT_HOST=59.24.191.180
