@@ -110,11 +110,11 @@ Set-PSReadLineOption -AddToHistoryHandler {
 }
 
 # 오토핫키
-function ea { vim "C:\Users\박대현\Documents\configs\ahk\DH_auto.ahk" }
-function cdd { Set-Location "C:\Users\박대현\Downloads" }
+function ea { vim "$HOME\Documents\configs\ahk\DH_auto.ahk" }
+function cdd { Set-Location "$HOME\Downloads" }
 
 
 
 ## Final Line to set prompt
-oh-my-posh --init --config 'C:\Users\박대현\.config\oh-my-posh\dh_theme.toml' | Invoke-Expression
+oh-my-posh --init --config "$HOME\.config\oh-my-posh\dh_theme.toml" | Invoke-Expression
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
