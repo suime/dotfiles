@@ -5,7 +5,6 @@ email = suime@github.com
 defaultBranch = main
 [core]
 excludesfile = ~/.gitignore
-autocrlf = true
 [init]
 defaultBranch = main
 templatedir = ~/.git_template
