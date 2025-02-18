@@ -22,8 +22,11 @@ alias pip="/usr/bin/pip3"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-bindkey '^[[D' backward-word  # Ctrl + 좌 방향키
-bindkey '^[[C' forward-word   # Ctrl + 우 방향키
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/dh_theme.toml)"
 

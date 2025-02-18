@@ -20,7 +20,7 @@ ui = auto
   ci = commit -v
   co = checkout
   pf = push --force-with-lease
-  st = status
+  s = status
 [merge]
   ff = only
 [fetch]
