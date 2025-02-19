@@ -42,7 +42,7 @@ fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+[[ -n ${_comps} ]] && _comps[zinit]=_zinit
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -52,11 +52,11 @@ zinit for \
     Aloxaf/fzf-tab \
     zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust \
     ajeetdsouza/zoxide 
-    # zdharma-continuum/zinit-annex-as-monitor \
-    # zdharma-continuum/zinit-annex-bin-gem-node \
-    # zdharma-continuum/zinit-annex-patch-dl \
-    # zdharma-continuum/zinit-annex-rust \
 
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
