@@ -171,5 +171,6 @@
     "editor.fontFamily": "D2CodingLigature Nerd Font Propo, Consolas, 'Courier New', monospace",
     "debug.console.fontFamily": "D2CodingLigature Nerd Font Propo",
     "editor.inlineSuggest.fontFamily": "D2CodingLigature Nerd Font Propo",
-    "editor.codeLensFontFamily": "D2CodingLigature Nerd Font Propo"
+    "editor.codeLensFontFamily": "D2CodingLigature Nerd Font Propo",
+    "terminal.integrated.defaultProfile.linux": "zsh"
 }
