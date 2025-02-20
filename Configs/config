@@ -1,6 +1,0 @@
-Host dh_nas
-  HostName 59.24.191.180
-  User qkqxk500
-  Port 3070
-  IdentityFile ~/.ssh/config
-  
