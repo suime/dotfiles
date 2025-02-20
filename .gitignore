@@ -7,6 +7,7 @@ api/
 cargo/
 mail/
 config_macos/.ssh
+config_NAS/
 
 id.ahk
 ._*

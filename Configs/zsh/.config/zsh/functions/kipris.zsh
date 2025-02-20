@@ -31,22 +31,23 @@ Cache-Control: no-cache'
         --data-raw "queryText=$encoded_query&expression=$encoded_query&historyQuery=$encoded_query&numPerPage=30&numPageLinks=10&currentPage=$page&piSearchYN=N")
 
     # 제어 문자를 제거
-    response=$(echo "$response" | tr -d '\000-\031')
+    response=$(echo "$response" | tr -d '\000-\031' | sed 's/<!HS>//g; s/<!HE>//g')
 
     if [[ -n "$file" ]]; then
         echo "$response" | jq "." >"$file"
     fi
 
     local totalcount=$(echo "$response" | jq '.countInfo.totalcount')
-    local count=$(echo "$response" | jq '.countInfo.count')
+    local count=0
     local resultList=$(echo "$response" | jq '.resultList')
 
     echo "total : $totalcount \t count : $count"
-
-    # for result in $(
-    #     echo "$resultList"
-    # ); do
-    #     local tl=$(echo "$result" | jq '.TL') # TL 값을 추출
-    #     echo "TL: $tl"                        # TL 값을 출력
-    # done
+    echo ""
+    echo "---\t---\t---\t"
+    echo "$resultList" | jq -c '.[]' | while read -r item; do
+        local tl=$(echo "$item" | jq -r '.TL') # TL 값을 추출
+        # local tle=$(echo "$item" | jq -r '.TLE')            # TLE 값을 추출
+        # local index=$(echo "$resultList" | jq '. | length') # 항목 개수
+        print -P "$((++count)): %F{111}$tl%f\t" # 순번, TL
+    done
 }

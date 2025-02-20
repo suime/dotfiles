@@ -15,8 +15,14 @@ alias ep="cursor ~/.zshrc"
 alias re="source ~/.zshrc"
 alias cls="clear"
 
-alias python="/usr/bin/python3"
-alias pip="/usr/bin/pip3"
+# 맥에서 
+# alias python="/usr/bin/python3"
+
+# 이거는 나스 전용
+alias python="/usr/local/bin/python3.10"
+alias pip="~/.local/bin/pip3.10"
+
+
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
