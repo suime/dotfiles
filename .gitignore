@@ -6,13 +6,11 @@ omz/
 api/
 cargo/
 mail/
-config_macos/.ssh
+config_macos/
 config_NAS/
 
 id.ahk
 ._*
-.DS_Store
-
 cache/
 log/
 .swp
@@ -24,7 +22,6 @@ log/
 *.zwc
 *.zcompdump
 # Thumbnail cache files
-._*
 Thumbs.db
 .tmp*
 *.mdb
