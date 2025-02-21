@@ -5,7 +5,7 @@ email = suime@github.com
 defaultBranch = main
 [core]
 excludesfile = ~/.gitignore
-	autocrlf = input
+autocrlf = input
 [init]
 defaultBranch = main
 templatedir = ~/.git_template
@@ -21,7 +21,8 @@ branches = for-each-ref --sort=-committerdate --format='%(color:blue)%(authordat
 ci = commit -v
 cm = commit -m
 co = checkout
-p = push
+pl = pull
+ps = push
 pf = push --force-with-lease
 [merge]
 ff = only
