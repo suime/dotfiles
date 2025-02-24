@@ -13,8 +13,9 @@ play = [
 ]
 edit = [
 	{ run = '$EDITOR "$@"', block = true, for = "unix" },
-	{ run = "%EDITOR% %*",  block = true, for = "windows" },
+	{ run = "OneCommander %*",  block = true, for = "windows" },
 ]
 open = [
-	{ run = 'xdg-open "$@"', desc = "Open" },
+	{ run = 'xdg-open "$@"', desc = "Open" , for = "unix" },
+	{ run = "OneCommander %*",  block = true, desc = "Open in OneCommander", for = "windows" },
 ]
