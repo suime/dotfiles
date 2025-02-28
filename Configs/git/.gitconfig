@@ -5,7 +5,7 @@ email = suime@github.com
 defaultBranch = main
 [core]
 excludesfile = ~/.gitignore
-autocrlf = input
+	autocrlf = false
 safecrlf = true
 [init]
 defaultBranch = main

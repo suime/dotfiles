@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "../../.."
+    },
+    {
+      "path": "../../hwp/assets/hwp"
     }
   ],
   "settings": {}
