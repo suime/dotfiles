@@ -1,6 +1,6 @@
 [user]
 name = DHP
-email = suime@github.com
+	email = qkqxk600@gmail.com
 [init]
 defaultBranch = main
 [core]
@@ -35,3 +35,8 @@ autosquash = true
 colorMoved = zebra
 [http]
 sslVerify = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
