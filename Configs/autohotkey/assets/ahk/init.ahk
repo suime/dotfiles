@@ -49,5 +49,5 @@ CapsLock & r:: init("ahk_exe WindowsTerminal.exe", "C:\Program Files\PowerShell\
 CapsLock & f:: init("ahk_exe Everything.exe", "C:\Program Files\Everything\Everything.exe", 1)
 CapsLock & c:: init "ahk_class Notepad++"
 
-CapsLock & d:: Run "onecommander.exe C:\Users\박대현\Downloads"
+CapsLock & d:: Run "onecommander.exe C:\다운로드"
 CapsLock & a:: Run "onecommander.exe C:\Users\박대현"

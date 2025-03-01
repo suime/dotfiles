@@ -1,5 +1,6 @@
+# https://yazi-rs.github.io/docs/configuration/yazi#preview
 [manager]
-show_hidden = true
+show_hidden = false
 sort_dir_first = true 
 sort_by = "natural"
 linemode = "size"
@@ -8,13 +9,46 @@ moust_events = "click_and_scroll_move_drag"
 
 [opener]
 play = [
+	{ run = '"C:\Program Files\VideoLAN\VLC\vlc.exe" %*', orphan = true, for = "windows" },
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
-	{ run = '"C:\Program Files\mpv.exe" %*', orphan = true, for = "windows" }
 ]
 edit = [
+	{ run = "notepad++ %*",  block = true, for = "windows" },
 	{ run = '$EDITOR "$@"', block = true, for = "unix" },
-	{ run = "%EDITOR% %*",  block = true, for = "windows" },
 ]
 open = [
-	{ run = 'xdg-open "$@"', desc = "Open" },
+	{ run = 'start "" %*', desc = "기본 프로그램으로 열기", for = "windows"},
+	{ run = 'xdg-open "$@"', desc = "기본 프로그램으로 열기", for = "unix" },
+]
+
+open_dir = [
+	{ run = 'OneCommander %*', for = "windows"},
+	{ run = 'xdg-open "$@"' , for = "unix" },
+]
+
+[open]
+rules = [
+	{ mime = "text/*", use = [ "edit", "open" , "open_dir" ] },
+	{ mime = "video/*", use = "play" },
+
+	# Multiple openers for a single rule
+	{ name = "*.html", use = [ "open", "edit" ] },
+	
+	# 한글 문서 
+	{ name = "*.hwp*", use = ["open", "open_dir"] },
+	# 모든 것 ?
+	{ name = "*", use = "open" },
+	
+]
+
+
+[plugin]
+prepend_previewers = [
+	# HEIC previewer
+	{ mime = "image/heic", run = "heic" },
+]
+
+append_previewers = [
+	# My fallback previewer
+	{ name = "*" , run = "binary" },
 ]

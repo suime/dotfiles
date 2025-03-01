@@ -2,7 +2,8 @@
     "remote.SSH.remotePlatform": {
         "mldl_R": "linux",
         "mldl01": "linux",
-        "NAS": "linux"
+        "NAS": "linux",
+        "DH_Nas": "linux"
     },
     "workbench.iconTheme": "catppuccin-mocha",
     "material-icon-theme.folders.theme": "classic",
