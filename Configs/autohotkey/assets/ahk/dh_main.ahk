@@ -1,24 +1,28 @@
 ﻿#Requires AutoHotkey >=2.0
 #SingleInstance force
 
+SetCapsLockState "AlwaysOff"
+SetNumLockState "AlwaysOn"
+
 #Include init.ahk
 #Include window.ahk
 #Include media.ahk
 #Include game.ahk
 #Include hwp.ahk
-#Include id.ahk
+;#Include id.ahk
 
-SetCapsLockState "AlwaysOff"
-SetNumLockState "AlwaysOn"
+
 
 #w:: Send "{Alt down}{F4}{Alt up}"
+
 ;& 캡스락 + 리로드
-CapsLock & w:: try {
-    Reload
-    WinHide , "MOMENT 광고"
-    try WinClose "IObit Public Program"
-    try WinKill "ahk_class TFormPromote"
-}
+CapsLock & w:: Reload
+;CapsLock & w:: try {
+;    Reload
+;    WinHide , "MOMENT 광고"
+;    try WinClose "IObit Public Program"
+;    try WinKill "ahk_class TFormPromote"
+;}
 
 ;& 캡스락키 -> 한영키
 capslock::vk15
