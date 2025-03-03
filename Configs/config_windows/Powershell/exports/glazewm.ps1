@@ -1,0 +1,1 @@
+$Env:GLAZEWM_CONFIG_PATH= "$HOME/glazewm/config.yaml 

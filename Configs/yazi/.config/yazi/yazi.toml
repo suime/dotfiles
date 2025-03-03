@@ -1,7 +1,7 @@
 # https://yazi-rs.github.io/docs/configuration/yazi#preview
 [manager]
 show_hidden = false
-sort_dir_first = true 
+sort_dir_first = true
 sort_by = "natural"
 linemode = "size"
 show_symlink = true
@@ -9,46 +9,39 @@ moust_events = "click_and_scroll_move_drag"
 
 [opener]
 play = [
-	{ run = '"C:\Program Files\VideoLAN\VLC\vlc.exe" %*', orphan = true, for = "windows" },
+	{ run = '"C:\Program Files\VideoLAN\VLC\vlc.exe" %*', orphan = true, for = "windows", desc = "VLC로 재생하기" },
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
 edit = [
-	{ run = "notepad++ %*",  block = true, for = "windows" },
+	{ run = '"C:\Program Files\Notepad++\notepad++.exe" %*', block = true, for = "windows", desc = "notepad++로 편집하기" },
 	{ run = '$EDITOR "$@"', block = true, for = "unix" },
 ]
+
+edit_nvim = [
+	{ run = "nvim %*", block = true, for = "windows", desc = "nvim 편집하기" },
+	{ run = 'nvim "$@"', block = true, for = "unix" },
+]
+
 open = [
-	{ run = 'start "" %*', desc = "기본 프로그램으로 열기", for = "windows"},
+	{ run = 'start "" %*', desc = "기본 프로그램으로 열기", for = "windows" },
 	{ run = 'xdg-open "$@"', desc = "기본 프로그램으로 열기", for = "unix" },
 ]
 
 open_dir = [
-	{ run = 'OneCommander %*', for = "windows"},
-	{ run = 'xdg-open "$@"' , for = "unix" },
+	{ run = 'OneCommander %*', for = "windows", desc = "원커맨더 경로 열기" },
+	{ run = 'xdg-open "$@"', for = "unix" },
 ]
 
 [open]
 rules = [
-	{ mime = "text/*", use = [ "edit", "open" , "open_dir" ] },
+	{ mime = "text/*", use = ["edit", "edit_nvim", "open", "open_dir"] },
 	{ mime = "video/*", use = "play" },
 
 	# Multiple openers for a single rule
-	{ name = "*.html", use = [ "open", "edit" ] },
-	
+	{ name = "*.html", use = ["open", "edit"] },
+
 	# 한글 문서 
 	{ name = "*.hwp*", use = ["open", "open_dir"] },
 	# 모든 것 ?
-	{ name = "*", use = "open" },
-	
-]
-
-
-[plugin]
-prepend_previewers = [
-	# HEIC previewer
-	{ mime = "image/heic", run = "heic" },
-]
-
-append_previewers = [
-	# My fallback previewer
-	{ name = "*" , run = "binary" },
+	{ name = "*", use = ["open", "open_dir", "edit"] },
 ]
