@@ -12,6 +12,8 @@ tuckr 참고
 winget install eza-community.eza
 winget install "YouTube Music Desktop App"
 ```
+
 ## todo 
 - 파일 템플릿 만들기 
+- 내용 따라서만들기 
 
