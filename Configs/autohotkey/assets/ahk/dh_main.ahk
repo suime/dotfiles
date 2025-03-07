@@ -5,7 +5,7 @@ SetCapsLockState "AlwaysOff"
 SetNumLockState "AlwaysOn"
 
 #Include init.ahk
-; #Include window.ahk
+#Include window.ahk
 #Include media.ahk
 #Include game.ahk
 #Include hwp.ahk

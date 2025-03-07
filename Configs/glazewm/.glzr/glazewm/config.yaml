@@ -1,0 +1,290 @@
+general:
+  startup_commands: ["shell-exec zebar"]
+  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
+
+  # Commands to run after the WM config is reloaded.
+  config_reload_commands: []
+
+  focus_follows_cursor: false
+  toggle_workspace_on_refocus: false
+
+  cursor_jump:
+    enabled: true
+    trigger: "monitor_focus"
+
+  hide_method: "cloak"
+  show_all_in_taskbar: true
+
+gaps:
+  scale_with_dpi: true
+  inner_gap: "10px"
+  outer_gap:
+    top: "40px"
+    right: "10px"
+    bottom: "10px"
+    left: "10px"
+
+window_effects:
+  focused_window:
+    border:
+      enabled: true
+      color: "#8dbcff"
+    corner_style:
+      enabled: false
+      # Allowed values: 'square', 'rounded', 'small_rounded'.
+      style: "small_rounded"
+    transparency:
+      enabled: false
+      opacity: "95%"
+
+  other_windows:
+    border:
+      enabled: true
+      color: "#a1a1a1"
+    corner_style:
+      enabled: true
+      style: "square"
+    transparency:
+      enabled: true
+      opacity: "90%"
+
+window_behavior:
+  initial_state: "tiling"
+  state_defaults:
+    floating:
+      centered: false
+      shown_on_top: false
+    fullscreen:
+      maximized: false
+      shown_on_top: true
+
+workspaces:
+  - name: "1"
+    display_name: "메인 1"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "2"
+    display_name: "사이드 2"
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: "3"
+    display_name: "Main3"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "4"
+    display_name: "Main 4"
+    bind_to_monitor: 2
+    keep_alive: true
+  - name: "5"
+    display_name: "한글 5"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "6"
+  - name: "7"
+  - name: "8"
+  - name: "9"
+
+window_rules:
+  - commands: ["ignore"]
+    match:
+      - window_process: { equals: "zebar" }
+      - window_title: { regex: "[Pp]icture.in.[Pp]icture|화면 속 화면" }
+        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
+
+      - window_process: { equals: "PowerToys" }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: "PowerToys" }
+        window_title: { regex: ".*? - Peek" }
+      - window_process: { equals: "Lively" }
+        window_class: { regex: "HwndWrapper" }
+      - window_title: { regex: "AHKv2" }
+      - window_class: { regex: "MessageWindowClass.*" }
+      - window_class: { regex: 'HwndWrapper\[OneCommander\.exe.*?\]' }
+        window_title: { regex: "Preview" }
+
+  # ! 플로팅 윈도우 설정
+  - commands: ["set-floating"]
+    match:
+      - window_class: { regex: 'HwndWrapper\[OneCommander\.exe.*?\]' }
+        window_process: { regex: "OneCommander" }
+      - window_class: { regex: "EVA_Window_Dblclk" }
+        window_process: { equals: "KakaoTalk" }
+      - window_class: { regex: "CASCADIA_HOSTING_WINDOW_CLASS" }
+      - window_class: { regex: "WinUIDesktopWin32WindowClass" }
+      - window_class: { regex: "ApplicationFrameWindow" }
+        window_process: { equals: "ApplicationFrameHost" }
+      - window_process: { equals: "Flow.Launcher" }
+        window_title: { equals: "Settings" }
+
+  # * 1 메인
+  - commands: ["move --workspace 1"]
+    match:
+      - window_class: { equals: "MozillaWindowClass" }
+
+  # * 5 한글 문서 작업
+  - commands: ["move --workspace 5"]
+    match:
+      - window_process: { regex: "Hwp" }
+
+binding_modes:
+  # When enabled, the focused window can be resized via arrow keys or HJKL.
+  - name: "resize"
+    keybindings:
+      - commands: ["resize --width -2%"]
+        bindings: ["h", "left"]
+      - commands: ["resize --width +2%"]
+        bindings: ["l", "right"]
+      - commands: ["resize --height +2%"]
+        bindings: ["k", "up"]
+      - commands: ["resize --height -2%"]
+        bindings: ["j", "down"]
+      # Press enter/escape to return to default keybindings.
+      - commands: ["wm-disable-binding-mode --name resize"]
+        bindings: ["escape", "enter", "lwin", "lctrl", "lalt"]
+
+keybindings:
+  - commands: ["shell-exec wt"]
+    bindings: ["alt+enter"]
+
+  # Disables window management and all other keybindings until alt+shift+p
+  # 정지하기
+  - commands: ["wm-toggle-pause"]
+    bindings: ["alt+p"]
+
+  # Change tiling direction. This determines where new tiling windows will
+  # be inserted.
+  - commands: ["toggle-tiling-direction"]
+    bindings: ["alt+v"]
+
+  # Kill GlazeWM process safely.
+  - commands: ["wm-exit"]
+    bindings: ["alt+shift+q"]
+
+  # Re-evaluate configuration file.
+  - commands: ["wm-reload-config"]
+    bindings: ["lalt+escape"]
+
+  # Move focused window in a given direction.
+  - commands: ["move --direction left"]
+    bindings: ["alt+shift+left"]
+  - commands: ["move --direction right"]
+    bindings: ["alt+shift+right"]
+  - commands: ["move --direction up"]
+    bindings: ["alt+shift+up"]
+  - commands: ["move --direction down"]
+    bindings: ["alt+shift+down"]
+
+  # ----- Change focus to a workspace defined in `workspaces` config.
+  - commands: ["focus --workspace 1"]
+    bindings: ["alt+1"]
+  - commands: ["focus --workspace 2"]
+    bindings: ["alt+2"]
+  - commands: ["focus --workspace 3"]
+    bindings: ["alt+3"]
+  - commands: ["focus --workspace 4"]
+    bindings: ["alt+4"]
+  - commands: ["focus --workspace 5"]
+    bindings: ["alt+5"]
+  - commands: ["focus --workspace 6"]
+    bindings: ["alt+6"]
+  - commands: ["focus --workspace 7"]
+    bindings: ["alt+7"]
+  - commands: ["focus --workspace 8"]
+    bindings: ["alt+8"]
+  - commands: ["focus --workspace 9"]
+    bindings: ["alt+9"]
+
+  # ----- 이동하고 포커스
+  - commands: ["move --workspace 1", "focus --workspace 1"]
+    bindings: ["alt+f1"]
+  - commands: ["move --workspace 2", "focus --workspace 2"]
+    bindings: ["alt+f2"]
+  - commands: ["move --workspace 3", "focus --workspace 3"]
+    bindings: ["alt+f3"]
+  - commands: ["move --workspace 4", "focus --workspace 4"] # 이거 창 끄는 단축키랑 맞먹는데
+    bindings: ["alt+f4"]
+  - commands: ["move --workspace 5", "focus --workspace 5"]
+    bindings: ["alt+f5"]
+  - commands: ["move --workspace 6", "focus --workspace 6"]
+    bindings: ["alt+f6"]
+  - commands: ["move --workspace 7", "focus --workspace 7"]
+    bindings: ["alt+f7"]
+  - commands: ["move --workspace 8", "focus --workspace 8"]
+    bindings: ["alt+f8"]
+  - commands: ["move --workspace 9", "focus --workspace 9"]
+    bindings: ["alt+f9"]
+
+  # Resize focused window by a percentage or pixel amount.
+  - commands: ["resize --width -10%"]
+    bindings: ["lwin+shift+left"]
+  - commands: ["resize --width +10%"]
+    bindings: ["lwin+shift+right", "caps_lock + right"]
+  - commands: ["resize --height +10%"]
+    bindings: ["lwin+shift+down"]
+  - commands: ["resize --height -10%"]
+    bindings: ["lwin+shift+up"]
+
+  # As an alternative to the resize keybindings above, resize mode enables
+  # resizing via arrow keys or HJKL. The binding mode is defined above with
+  # the name 'resize'.
+  # - commands: ["wm-enable-binding-mode --name resize"]
+  #   bindings: ["alt+r"]
+
+  # Change focus from tiling windows -> floating -> fullscreen.
+  - commands: ["wm-cycle-focus"]
+    bindings: ["alt+space"]
+
+  # Change the focused window to be floating.
+  # - commands: ["toggle-floating --centered"]
+  #   bindings: ["shift + f"]
+
+  # Change the focused window to be tiling.
+  # - commands: ["toggle-tiling"]
+  #   bindings: ["alt+t"]
+
+  # Change the focused window to be fullscreen.
+  - commands: ["toggle-fullscreen"]
+    bindings: ["alt+f"]
+
+  # Minimize focused window.
+  - commands: ["toggle-minimized"]
+    bindings: ["alt+h"]
+
+  # Close focused window.
+  # - commands: ["close"]
+  #   bindings: ["alt+shift+q"]
+
+  # Redraw all windows.
+  - commands: ["wm-redraw"]
+    bindings: ["lalt+lshift+w"]
+
+  # Focus the next/previous active workspace defined in `workspaces` config.
+  # - commands: ["focus --next-active-workspace"]
+  #   bindings: ["alt+s"]
+  # - commands: ["focus --prev-active-workspace"]
+  #   bindings: ["alt+a"]
+
+  # Focus the workspace that last had focus.
+  # - commands: ["focus --recent-workspace"]
+  #   bindings: ["alt+d"]
+
+  # Move the focused window's parent workspace to a monitor in a given
+  # direction.
+  # - commands: ["move-workspace --direction left"]
+  #   bindings: ["alt+shift+a"]
+  # - commands: ["move-workspace --direction right"]
+  #   bindings: ["alt+shift+f"]
+  # - commands: ["move-workspace --direction up"]
+  #   bindings: ["alt+shift+d"]
+  # - commands: ["move-workspace --direction down"]
+  #   bindings: ["alt+shift+s"]
+
+  # Shift focus in a given direction.
+  # - commands: ["focus --direction left"]
+  #   bindings: ["alt+h"]
+  # - commands: ["focus --direction right"]
+  #   bindings: ["alt+l"]
+  # - commands: ["focus --direction up"]
+  #   bindings: ["alt+k"]
+  # - commands: ["focus --direction down"]
+  #   bindings: ["alt+j"]

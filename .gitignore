@@ -24,6 +24,8 @@ log/
 # Thumbnail cache files
 Thumbs.db
 .tmp*
+tmp*/
+tmp*/**
 *.mdb
 
 # Files that might appear on external disks

@@ -1,7 +1,5 @@
 {
   "remote.SSH.remotePlatform": {
-    "mldl_R": "linux",
-    "mldl01": "linux",
     "NAS": "linux",
     "DH_Nas": "linux"
   },
@@ -83,7 +81,6 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "jupyter.enableExtendedPythonKernelCompletions": true,
   "python.analysis.inlayHints.pytestParameters": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "notebook.formatOnSave.enabled": true,
@@ -109,5 +106,76 @@
   "editor.codeLensFontFamily": "D2CodingLigature Nerd Font Propo",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "catppuccin-noctis-icons.hidesExplorerArrows": false,
-  "python.analysis.cacheLSPData": true
+  "python.analysis.cacheLSPData": true,
+  "better-comments.highlightPlainText": true,
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+      "isRegex": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+      "isRegex": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+      "isRegex": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+      "isRegex": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+      "isRegex": false
+    },
+    {
+      "tag": "-{5,}",
+      "color": "#000000",
+      "backgroundColor": "#fff",
+      "bold": true,
+      "isRegex": true,
+      "isWholeLine": true
+    }
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "workbench.editor.labelFormat": "short",
+  "frameIndentRainbow.colors": [
+    "hsla(312, 70%, 50%, 0.2)",
+    "hsla(250, 70%, 50%, 0.2)",
+    "hsla(191, 70%, 50%, 0.2)",
+    "hsla(20, 70%, 50%, 0.2)"
+  ],
+  "frameIndentRainbow.updateDelay": 1000
 }
