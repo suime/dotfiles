@@ -3,7 +3,7 @@
     "NAS": "linux",
     "DH_Nas": "linux"
   },
-  "workbench.iconTheme": "catppuccin noctis icons",
+  "workbench.iconTheme": "catppuccin-perfect-mocha",
   "explorer.confirmDragAndDrop": false,
   "[markdown]": {
     "editor.tabSize": 4,

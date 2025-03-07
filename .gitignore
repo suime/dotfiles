@@ -8,7 +8,7 @@ cargo/
 mail/
 config_macos/
 config_NAS/
-
+.ollama/
 id.ahk
 ._*
 cache/
