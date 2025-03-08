@@ -61,7 +61,9 @@ style = "agnoster_short"
 
 
 [[blocks.segments]]
+type = "git"
 style = "diamond"
+# style = "plain"
 leading_diamond = " "
 trailing_diamond = ""
 foreground = "transparent"
@@ -72,8 +74,7 @@ background_templates = [
     "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
     "{{ if gt .Behind 0 }}p:mauve{{ end }}",
 ]
-template = "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
-type = "git"
+template = "{{ .UpstreamIcon }}  {{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
 
 [blocks.segments.properties]
 branch_icon = "\ue725 "
@@ -87,18 +88,30 @@ rebase_icon = "\ue728 "
 revert_icon = "\uf0e2 "
 tag_icon = "\uf412 "
 
+[[blocks.segments]]
+type = "python"
+style = "diamond"
+leading_diamond = " "
+trailing_diamond = ""
+foreground = "transparent"
+background = "p:sky"
+template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{.Major}}.{{.Minor }}{{ end }}"
+
+[blocks.segments.properties]
+always_enabled = true
+
 [[blocks]]
 alignment = "right"
 type = "prompt"
 
-[[blocks.segments]]
-foreground = "#007ACC"
-template = " {{ .CurrentDate | date .Format }} "
-style = "plain"
-type = "time"
+# [[blocks.segments]]
+# foreground = "#007ACC"
+# template = " {{ .CurrentDate | date .Format }} "
+# style = "plain"
+# type = "time"
 
-[blocks.segments.properties]
-time_format = "15:04:05"
+# [blocks.segments.properties]
+# time_format = "15:04:05"
 
 [[blocks.segments]]
 type = "executiontime"
@@ -114,30 +127,18 @@ threshold = 500
 style = "austin"
 always_enabled = true
 
-[[blocks.segments]]
-type = "python"
-style = "diamond"
-leading_diamond = " "
-trailing_diamond = ""
-foreground = "transparent"
-background = "p:blue"
-template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{.Major}}.{{.Minor }}{{ end }} "
+# [[blocks.segments]]
+# type = "ytm"
+# style = "plain"
+# api_url = "http://127.0.0.1:9863"
+# foreground = "#ffffff"
+# background = "#FF0000"
 
-[blocks.segments.properties]
-always_enabled = true
-
-[[blocks.segments]]
-type = "ytm"
-style = "plain"
-api_url = "http://127.0.0.1:9863"
-foreground = "#ffffff"
-background = "#FF0000"
-
-[blocks.segments.properties]
-always_enabled = true
-playing_icon = " "
-paused_icon = " "
-stopped_icon = " "
+# [blocks.segments.properties]
+# always_enabled = true
+# playing_icon = " "
+# paused_icon = " "
+# stopped_icon = " "
 
 [[blocks.segments]]
 type = "battery"
