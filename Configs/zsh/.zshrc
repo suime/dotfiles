@@ -19,10 +19,6 @@ alias python="/usr/bin/python3"
 alias pip="/usr/bin/pip3"
 alias p="pokefetch"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/dh_theme.toml)"
 
@@ -36,9 +32,8 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
 fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-# autoload -Uz _zinit
+autoload -Uz _zinit
 # (( ${+_comps} )) && _comps[zinit]=_zinit
-autoload -Uz compinit && _comps[zinit]=_zinit
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
