@@ -45,8 +45,10 @@ CapsLock & b:: init("ahk_exe Battle.net.exe", "C:\Program Files (x86)\Battle.net
 CapsLock & t:: init("Steam", "C:\Program Files (x86)\Steam\steam.exe")
 CapsLock & e:: init("ahk_exe Cursor.exe", "C:\Users\박대현\AppData\Local\Programs\cursor\Cursor.exe")
 CapsLock & q:: init("C:\Program Files\AutoHotkey\UX\WindowSpy.ahk", "C:\Program Files\AutoHotkey\UX\WindowSpy.ahk", 1)
-CapsLock & r:: init("ahk_exe WindowsTerminal.exe", "C:\Program Files\PowerShell\7\pwsh.exe")
+CapsLock & r:: init("ahk_exe WindowsTerminal.exe", "wt")
 CapsLock & f:: init("ahk_exe Everything.exe", "C:\Program Files\Everything\Everything.exe", 1)
+CapsLock & y:: init("ahk_exe youtube-music-desktop-app.exe",
+    "C:\Users\dbro\AppData\Local\youtube_music_desktop_app\youtube-music-desktop-app.exe")
 CapsLock & c:: init "ahk_class Notepad++"
 
 CapsLock & d:: Run "onecommander.exe C:\다운로드"

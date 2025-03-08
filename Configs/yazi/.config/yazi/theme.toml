@@ -1,3 +1,4 @@
+
 [manager]
 cwd = { fg = "#94e2d5" }
 
@@ -36,8 +37,8 @@ unset_main = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
 unset_alt = { fg = "#f2cdcd", bg = "#313244" }
 
 [status]
-separator_open = ""
-separator_close = ""
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
 progress_label = { fg = "#ffffff", bold = true }
 progress_normal = { fg = "#89b4fa", bg = "#45475a" }
@@ -103,6 +104,7 @@ rules = [
   { mime = "{audio,video}/*", fg = "#f9e2af" },
 
   # Archives
+  { mime = "application/hwp*", fg = "#00b4ff" },
   { mime = "application/*zip", fg = "#f5c2e7" },
   { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
 
@@ -115,6 +117,39 @@ rules = [
 ]
 
 [icon]
+conds = [
+  # Special files
+  { if = "orphan", text = "" },
+  { if = "link", text = "󰴉" },
+  { if = "block", text = "" },
+  { if = "char", text = "" },
+  { if = "fifo", text = "" },
+  { if = "sock", text = "" },
+  { if = "sticky", text = "" },
+  { if = "dummy", text = "" },
+  # Fallback
+  { if = "dir", text = "" },
+  { if = "exec", text = "" },
+  { if = "!dir", text = "" },
+]
+dirs  = [
+  { name = ".config", text = "" },
+  { name = ".git", text = "" },
+  { name = ".github", text = "" },
+  { name = ".npm", text = "" },
+  { name = "Desktop", text = "󱂵" },
+  { name = "Development", text = "" },
+  { name = "Documents", text = "󱋣" },
+  { name = "Downloads", text = "󰉍" },
+  { name = "Library", text = "" },
+  { name = "Movies", text = "" },
+  { name = "Music", text = "󱍙" },
+  { name = "Pictures", text = "󰉏" },
+  { name = "Public", text = "" },
+  { name = "Videos", text = "" },
+  { name = "dotfiles", text = "󱃪", fg = "#cba6f7" },
+  { name = "#나스", text = "󰚝", fg = "#cba6f7" },
+]
 files = [
   { name = "kritadisplayrc", text = "", fg = "#cba6f7" },
   { name = ".gtkrc-2.0", text = "", fg = "#f5e0dc" },
@@ -641,7 +676,7 @@ exts = [
   { name = "pl", text = "", fg = "#74c7ec" },
   { name = "ads", text = "", fg = "#f5e0dc" },
   { name = "sqlite", text = "", fg = "#f5e0dc" },
-  { name = "pdf", text = "", fg = "#585b70" },
+  { name = "pdf", text = "", fg = "#f38ba8" },
   { name = "pcm", text = "", fg = "#6c7086" },
   { name = "ico", text = "", fg = "#f9e2af" },
   { name = "a", text = "", fg = "#f5e0dc" },

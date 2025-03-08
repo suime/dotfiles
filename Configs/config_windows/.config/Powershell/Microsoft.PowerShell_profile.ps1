@@ -112,9 +112,10 @@ Set-PSReadLineOption -AddToHistoryHandler {
 # 오토핫키
 function ea { vim "$HOME\Documents\configs\ahk\DH_auto.ahk" }
 function cdd { Set-Location "$HOME\Downloads" }
-
+Set-Alias -Name p -Value "$HOME\assets\bin\pokefetch.exe"
 
 
 ## Final Line to set prompt
 oh-my-posh --init --config "$HOME\.config\oh-my-posh\dh_theme.toml" | Invoke-Expression
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+& "$HOME\assets\bin\pokefetch.exe"
