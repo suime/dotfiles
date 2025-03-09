@@ -11,7 +11,8 @@
         <Shortcut id="44030" Ctrl="no" Alt="yes" Shift="no" Key="219" />
         <Shortcut id="48009" Ctrl="yes" Alt="no" Shift="no" Key="188" />
         <Shortcut id="50011" Ctrl="no" Alt="no" Shift="no" Key="0" />
-        <Shortcut id="42099" Ctrl="no" Alt="yes" Shift="no" Key="68" />
+        <Shortcut id="42099" Ctrl="yes" Alt="no" Shift="no" Key="69" />
+        <Shortcut id="42094" Ctrl="yes" Alt="no" Shift="no" Key="68" />
     </InternalCommands>
     <Macros>
         <Macro name="Trim Trailing Space and Save" Ctrl="no" Alt="yes" Shift="yes" Key="83">
@@ -28,7 +29,7 @@
         <PluginCommand moduleName="mimeTools.dll" internalID="0" Ctrl="no" Alt="yes" Shift="no" Key="96" />
     </PluginCommands>
     <ScintillaKeys>
-        <ScintKey ScintID="2338" menuCmdID="0" Ctrl="yes" Alt="no" Shift="no" Key="68" />
+        <ScintKey ScintID="2338" menuCmdID="0" Ctrl="no" Alt="yes" Shift="no" Key="68" />
         <ScintKey ScintID="2469" menuCmdID="0" Ctrl="yes" Alt="no" Shift="yes" Key="68" />
     </ScintillaKeys>
 </NotepadPlus>
