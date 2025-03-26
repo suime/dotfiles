@@ -1,7 +1,8 @@
 {
   "remote.SSH.remotePlatform": {
     "NAS": "linux",
-    "DH_Nas": "linux"
+    "DH_Nas": "linux",
+    "dh_nas": "linux"
   },
   "workbench.iconTheme": "catppuccin noctis icons",
   "explorer.confirmDragAndDrop": false,
@@ -183,6 +184,9 @@
 <<<<<<< HEAD
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 =======
   "[vb]": {
