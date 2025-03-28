@@ -1,3 +1,34 @@
+# >>> goto >>>
+[[manager.prepend_keymap]]
+on = ["g", "1"]
+run = "cd C:"
+desc = " C"
+
+[[manager.prepend_keymap]]
+on = ["g", "2"]
+run = "cd D:"
+desc = " D"
+
+[[manager.prepend_keymap]]
+on = ["g", "3"]
+run = "cd E:"
+desc = " E"
+
+[[manager.prepend_keymap]]
+on = ["g", "4"]
+run = "cd F:"
+desc = " F"
+
+[[manager.prepend_keymap]]
+on = ["g", "5"]
+run = "cd G:"
+desc = " G"
+
+[[manager.prepend_keymap]]
+on = ["g", "6"]
+run = "cd H:"
+desc = " H"
+
 [[manager.prepend_keymap]]
 on = ["g", "d"]
 run = "cd ~/Downloads"
@@ -44,6 +75,19 @@ desc = "오토핫키 편집(윈도우) 수정필요"
 run = 'shell "mkdir test"'
 on = ["n", "h"]
 desc = "한글 원피양식"
+
+# ! >>> move >>> 
+[[manager.prepend_keymap]]
+on = "<F2>"
+run = 'rename --cursor=before_ext'
+
+[[manager.prepend_keymap]]
+on = "<Home>"
+run = 'arrow top'
+
+[[manager.prepend_keymap]]
+on = "<End>"
+run = 'arrow bot'
 
 
 # open workspaces
