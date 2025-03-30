@@ -41,7 +41,7 @@
   "editor.accessibilitySupport": "off",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.enableImages": true,
-  "workbench.colorTheme": "Catppuccin Noctis Mocha",
+  "workbench.colorTheme": "Catppuccin Noctis Frappé",
   "editor.suggest.snippetsPreventQuickSuggestions": true,
   "editor.acceptSuggestionOnEnter": "smart",
   "autoDocstring.generateDocstringOnEnter": false,
@@ -181,7 +181,6 @@
     "hsla(20, 70%, 50%, 0.2)"
   ],
   "frameIndentRainbow.updateDelay": 1000,
-<<<<<<< HEAD
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
@@ -193,5 +192,4 @@
     "editor.defaultFormatter": "threatcon.vba-formatter"
   },
   "vbaFormatter.breakOnSeperator": true
->>>>>>> 2a2b609 (a)
 }
