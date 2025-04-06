@@ -1,7 +1,4 @@
 function fish_user_key_bindings
-  # fzf
-  bind \cf fzf_change_directory
-
   # clear
   bind \cl clear
 
@@ -12,6 +9,11 @@ function fish_user_key_bindings
   bind \cD kill-word
 
   bind \e\[3\;5~ kill-word
+
+  bind \e kill-whole-line
+
+  # fzf 
+  bind \cp _fzf_search_processes
 
 end
 
