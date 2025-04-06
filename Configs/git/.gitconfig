@@ -9,7 +9,7 @@ excludesfile = ~/.gitignore
 safecrlf = true
 [init]
 defaultBranch = main
-templatedir = ~/.git_template
+# templatedir = ~/.git_template
 [push]
 default = current
 [color]
