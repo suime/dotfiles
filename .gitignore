@@ -17,7 +17,7 @@ log/
 .DS_Store
 fish_variables
 Configs/fish/.config/fish/fish_v*
-*.fish_variables
+*fish_variables
 Configs/fish/.config/fish/fish_variables
 .vscode
 .idea
