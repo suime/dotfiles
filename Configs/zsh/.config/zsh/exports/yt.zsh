@@ -1,0 +1,1 @@
+alias yt="yt-dlp --compat-options no-certifi -f 'bv+ba/b' -S 'ext'"

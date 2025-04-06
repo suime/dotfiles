@@ -186,10 +186,10 @@
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
-=======
+  },
   "[vb]": {
     "editor.defaultFormatter": "threatcon.vba-formatter"
   },
-  "vbaFormatter.breakOnSeperator": true
+  "vbaFormatter.breakOnSeperator": true,
+  "cline.preferredLanguage": "Korean - 한국어"
 }

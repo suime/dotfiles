@@ -19,6 +19,14 @@ alias python="/usr/bin/python3"
 alias pip="/usr/bin/pip3"
 alias p="pokefetch"
 
+# wifi 
+wifi() {
+  local INTERFACE=EN0
+  local MAC=$1
+
+  sudo ifconfig en0 ether $MAC
+}
+alias wifiex="wifi F8:C3:CC:2A:53:B8"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/dh_theme.toml)"
 
@@ -50,3 +58,6 @@ source <(fzf --zsh)
 
 ### End of Zinit's installer chunk
 # pokefetch 
+
+# Added by Windsurf
+export PATH="/Users/daehyeon/.codeium/windsurf/bin:$PATH"
