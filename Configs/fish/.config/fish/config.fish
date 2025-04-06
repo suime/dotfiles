@@ -4,6 +4,17 @@ set -gx TERM xterm-256color
 set -gx PATH ~/.local/bin:~/.nix-profile/bin/:/usr/local/bin:$HOME/.cargo/bin $PATH
 set -gx LC_ALL "C"
 
+switch (uname)
+    case Darwin
+        echo "mac"
+        abbr -a py --position anywhere "python3"
+    case Linux
+        echo "nas"
+        abbr -a py --position anywhere "python"
+    case '*'
+        echo "fish window"
+end
+
 
 # alias 
 alias ep "$EDITOR ~/.config/fish/config.fish"
@@ -78,7 +89,7 @@ abbr -a tk "tuckr"
 
 # python
 set PYTHONIOENCODING 'UTF-8';
-abbr -a py --position anywhere "python"
+
 
 # >>> yazi 
 set YAZI_CONFIG_HOME "~/.config/yazi"
