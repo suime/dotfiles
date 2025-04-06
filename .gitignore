@@ -16,7 +16,7 @@ log/
 .swp
 .DS_Store
 
-
+fish_variables
 Configs/fish/.config/fish/fish_v*
 .vscode
 .idea
