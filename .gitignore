@@ -15,9 +15,10 @@ cache/
 log/
 .swp
 .DS_Store
-
 fish_variables
 Configs/fish/.config/fish/fish_v*
+*.fish_variables
+Configs/fish/.config/fish/fish_variables
 .vscode
 .idea
 *_history
