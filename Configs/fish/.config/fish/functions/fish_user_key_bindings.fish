@@ -11,6 +11,8 @@ function fish_user_key_bindings
   # delete backward
   bind \cD kill-word
 
+  bind \e\[3\;5~ kill-word
+
 end
 
 # fzf plugin
