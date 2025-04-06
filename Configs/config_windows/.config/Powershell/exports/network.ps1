@@ -1,3 +1,5 @@
+Set-Alias -Name ip -Value ipconfig
+
 function Convert-SubnetMaskToPrefix {
     param ([string]$SubnetMask)
     $binaryMask = ($SubnetMask -split '\.') | ForEach-Object { [convert]::ToString([int]$_, 2).PadLeft(8, '0') }
@@ -63,8 +65,8 @@ function Set-NetworkAdapterConfig {
 
 
 function nn {
-	Set-NetworkAdapterConfig -AdapterName "이더넷" -IPAddress "10.99.6.87" -SubnetMask "255.255.255.0" -Gateway "10.99.6.200" -DNSServers @("172.10.10.45", "1.1.1.1")
+    Set-NetworkAdapterConfig -AdapterName "이더넷" -IPAddress "10.99.6.87" -SubnetMask "255.255.255.0" -Gateway "10.99.6.200" -DNSServers @("172.10.10.45", "1.1.1.1")
 }
 function nw {
-	Set-NetworkAdapterConfig -AdapterName "이더넷" -DynamicIP $true 
+    Set-NetworkAdapterConfig -AdapterName "이더넷" -DynamicIP $true 
 }

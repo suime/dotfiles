@@ -6,6 +6,7 @@ sort_by = "natural"
 linemode = "size"
 show_symlink = true
 moust_events = "click_and_scroll_move_drag"
+ratio = [1, 2, 5]
 
 [opener]
 play = [
@@ -32,6 +33,11 @@ open_dir = [
 	{ run = 'xdg-open "$@"', for = "unix" },
 ]
 
+extract = [
+	{ run = 'ouch d -y "%*"', desc = "압축해제", for = "windows" },
+	{ run = 'ouch d -y "$@"', desc = "압축해제", for = "unix" },
+]
+
 [open]
 rules = [
 	{ mime = "text/*", use = ["edit", "edit_nvim", "open", "open_dir"] },
@@ -42,6 +48,49 @@ rules = [
 
 	# 한글 문서 
 	{ name = "*.hwp*", use = ["open", "open_dir"] },
+	
+	# zip 
+	{ name = "*.zip*", use = ["open", "open_dir", "extract"] },
+	
 	# 모든 것 ?
 	{ name = "*", use = ["open", "open_dir", "edit"] },
 ]
+
+[plugin]
+prepend_previewers = [
+	{ name = "*.md", run = "glow" },
+	# structured text 
+	{ name = "*.csv", run = "rich-preview"}, # for csv files
+    { name = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
+    { name = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
+    { name = "*.json", run = "rich-preview"}, # for json (.json) files
+	
+	# { mime = "text/csv", run = "miller"},
+	{ name = "*.ipynb", run = "nbpreview" },
+	#	{ name = "*.csv", run = "duckdb" },  
+	{ name = "*.tsv", run = "duckdb" },  
+    { name = "*.json", run = "duckdb" },  
+    { name = "*.parquet", run = "duckdb" },  
+	
+	# Archive 
+	{ name = "*.zip",            run = "ouch" },
+	{ name = "*.tar",           run = "ouch" },
+	{ name = "*.rar",           run = "ouch" },
+	{ mime = "application/x-bzip2",         run = "ouch" },
+	{ mime = "application/x-7z-compressed", run = "ouch" },
+	{ mime = "application/x-rar",           run = "ouch" },
+	{ mime = "application/x-xz",            run = "ouch" },
+]
+
+prepend_preloaders = [  
+	{ name = "*.tsv", run = "duckdb", multi = false },  
+    { name = "*.csv", run = "duckdb", multi = false },  
+    { name = "*.json", run = "duckdb", multi = false },  
+    { name = "*.parquet", run = "duckdb", multi = false },
+    { name = "*.db", run = "duckdb" },
+    { name = "*.duckdb", run = "duckdb" },
+    ]
+	
+# append_previewers = [
+  # { name = "*", run = "hexyl" },
+# ]

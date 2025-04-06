@@ -1,5 +1,10 @@
 # >>> goto >>>
 [[manager.prepend_keymap]]
+on = ["C"]
+run = "plugin ouch"
+desc = "압축하기"
+
+[[manager.prepend_keymap]]
 on = ["g", "1"]
 run = "cd C:"
 desc = " C"
@@ -91,8 +96,20 @@ on = "<Home>"
 run = 'arrow top'
 
 [[manager.prepend_keymap]]
+on = "<S-End>"
+run = 'seek 5'
+
+[[manager.prepend_keymap]]
+on = "<S-Home>"
+run = 'seek -5'
+
+[[manager.prepend_keymap]]
 on = "<End>"
 run = 'arrow bot'
+
+[[manager.prepend_keymap]]
+on = "<Esc>"
+run = 'quit'
 
 
 # open workspaces
@@ -101,3 +118,9 @@ run = 'arrow bot'
 # $n (Unix) / %n (Windows): The N-th selected file, starting from 1. e.g. $2 represents the second selected file.
 # $@ (Unix) / %* (Windows): All selected files, i.e. $1, $2, ..., $n.
 # $0 (Unix) / %0 (Windows): The hovered file.
+
+
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"

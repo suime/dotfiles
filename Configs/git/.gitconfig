@@ -42,3 +42,4 @@ colorMoved = zebra
 	required = true
 [safe]
 	directory = G:/dotfiles
+	directory = C:/Users/dbro/dotfiles

@@ -10,3 +10,4 @@ choco install -y yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide imagemagick b
 # scoop 패키지 설치 
 scoop install eza
 
+cargo install --git https://github.com/RaphGL/Tuckr.git
