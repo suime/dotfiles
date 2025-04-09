@@ -4,6 +4,8 @@ set -gx TERM xterm-256color
 set -gx PATH ~/.local/bin:~/.nix-profile/bin/:/usr/local/bin:$HOME/.cargo/bin $PATH
 set -gx LC_ALL C
 set -gx EDITOR nvim
+set -gx LANG ko_KR.UTF-8
+set -gx LC_ALL ko_KR.UTF-8
 
 switch (uname)
     case Darwin
@@ -29,6 +31,7 @@ alias cdd "cd $HOME/Downloads"
 
 abbr -a ip ifconfig
 abbr -a cls clear
+abbr -a cnt --position anywhere count
 
 # eza 
 alias ls "eza --icons=always --hyperlink --group-directories-first -w=80 --ignore-glob=@eaDir"
@@ -64,6 +67,10 @@ set -gx FZF_ALT_C_OPTS " \
 # git 
 abbr -a g git
 abbr -a lg lazygit
+abbr -a 햣 git
+abbr -a ㅊㅇ cd
+abbr -a 니 ls
+abbr -a ins --position anywhere install
 
 # nix 
 function nix_install
@@ -81,6 +88,10 @@ abbr -a ns nix_search
 # conda 
 abbr -a co conda
 abbr -a cel "conda env list"
+
+# tmux 
+abbr -a tm "tmux"
+alias tmux "tmux -u -f ~/.config/tmux/tmux.conf"
 
 # tuckr 
 set TUCKR_HOME "$HOME"

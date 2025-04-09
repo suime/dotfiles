@@ -191,5 +191,6 @@
     "editor.defaultFormatter": "threatcon.vba-formatter"
   },
   "vbaFormatter.breakOnSeperator": true,
-  "cline.preferredLanguage": "Korean - 한국어"
+  "cline.preferredLanguage": "Korean - 한국어",
+  "editor.maxTokenizationLineLength": 40000
 }
