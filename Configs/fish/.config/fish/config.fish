@@ -18,7 +18,6 @@ switch (uname)
         echo "fish window"
 end
 
-
 # alias  abbr 
 alias ep "$EDITOR ~/.config/fish/config.fish"
 alias re fish
@@ -90,8 +89,9 @@ abbr -a co conda
 abbr -a cel "conda env list"
 
 # tmux 
-abbr -a tm "tmux"
-alias tmux "tmux -u -f ~/.config/tmux/tmux.conf"
+abbr -a tm tmux
+alias tmux "tmux -u"
+alias ta "tmux a"
 
 # tuckr 
 set TUCKR_HOME "$HOME"
