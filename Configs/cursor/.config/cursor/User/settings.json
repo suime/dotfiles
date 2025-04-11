@@ -107,7 +107,7 @@
   "debug.console.fontFamily": "D2CodingLigature Nerd Font Propo",
   "editor.inlineSuggest.fontFamily": "D2CodingLigature Nerd Font Propo",
   "editor.codeLensFontFamily": "D2CodingLigature Nerd Font Propo",
-  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.linux": "fish",
   "catppuccin-noctis-icons.hidesExplorerArrows": false,
   "python.analysis.cacheLSPData": true,
   "better-comments.highlightPlainText": true,
@@ -192,5 +192,8 @@
   },
   "vbaFormatter.breakOnSeperator": true,
   "cline.preferredLanguage": "Korean - 한국어",
-  "editor.maxTokenizationLineLength": 40000
+  "editor.maxTokenizationLineLength": 40000,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
