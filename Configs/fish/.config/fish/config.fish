@@ -1,7 +1,7 @@
 # exports 
 set fish_greeting ""
 set -gx TERM xterm-256color
-set -gx PATH ~/.local/bin:~/.nix-profile/bin/:/usr/local/bin:$HOME/.cargo/bin $PATH
+#set -gx PATH ~/.local/bin:~/.nix-profile/bin/:/usr/local/bin:$HOME/.cargo/bin $PATH
 set -gx LC_ALL C
 set -gx EDITOR nvim
 set -gx LANG ko_KR.UTF-8
@@ -20,7 +20,10 @@ end
 
 # alias  abbr 
 alias ep "$EDITOR ~/.config/fish/config.fish"
-alias re fish
+alias et "$EDITOR ~/.config/tmux/tmux.conf"
+alias ey "$EDITOR ~/.config/yazi/yazi.toml"
+alias re "source ~/.config/fish/config.fish"
+alias ㅊ clear
 alias c clear
 alias .. "cd .."
 alias ... "cd ../.."
@@ -34,7 +37,7 @@ abbr -a cnt --position anywhere count
 
 # eza 
 alias ls "eza --icons=always --hyperlink --group-directories-first -w=80 --ignore-glob=@eaDir"
-alias ll "eza -l --icons=always --hyperlink -a -h --no-permissions --no-user --ignore-glob=@eaDir \
+alias ll "eza -l --icons=always --hyperlink -a -h --no-user --ignore-glob=@eaDir \
 --time-style='+%Y.%m.%d %H:%M' --group-directories-first --color-scale=all --color-scale-mode=gradient"
 alias ld "eza -l --icons=always --hyperlink -a -D -h --no-permissions --no-user --ignore-glob=@eaDir --time-style='+%Y.%m.%d %H:%M'"
 alias lf "eza -l --icons=always --hyperlink -a -f -h --no-permissions --no-user --time-style='+%Y.%m.%d %H:%M'"
@@ -88,15 +91,22 @@ abbr -a ns nix_search
 abbr -a co conda
 abbr -a cel "conda env list"
 
+# ssh 
+alias ssha "ssh dh_nas"
 # tmux 
-abbr -a tm tmux
+abbr -a t tmux
 alias tmux "tmux -u"
-alias ta "tmux a"
+abbr -a ta "tmux a"
+abbr -a tk "tmux kill-server"
+abbr -a tl "tmux ls"
+
+# tldr
+alias tldr "tldr --compact"
+abbr -a tt tldr
 
 # tuckr 
 set TUCKR_HOME "$HOME"
 set TUCKR_TARGET "$HOME"
-abbr -a tk tuckr
 
 # python
 set PYTHONIOENCODING UTF-8
