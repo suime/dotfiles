@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$HOME/.cargo/bin:~/.local/bin:/opt/homebrew/bin:$PATH
+# export PATH=/usr/local/bin:$HOME/.cargo/bin:~/.local/bin:/opt/homebrew/bin:$PATH
 
 # 설정 한방 
 for dir in ~/.config/zsh/{alias,exports,functions}; do

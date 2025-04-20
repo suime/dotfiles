@@ -1,3 +1,4 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 # >>> goto >>>
 [[manager.prepend_keymap]]
 on = ["C"]
@@ -45,8 +46,8 @@ run = "cd ~/dotfiles"
 desc = "닷파일"
 
 [[manager.prepend_keymap]]
-on = ["g", "w"]
-run = "cd ~/workspaces"
+on = ["g", "ㅇ"]
+run = "cd ~/ghq"
 desc = "workspace"
 
 [[manager.prepend_keymap]]
@@ -59,29 +60,29 @@ on = ["g", "f"]
 run = 'search_do --via=fd --args="-d 3"'
 desc = "flat 뷰"
 
-# * edit profiles 
+# * edit profiles
 [[manager.prepend_keymap]]
 on = ["e", "p"]
-run = 'shell "cursor ~/.zshrc"'
+run = 'shell "$EDITOR ~/.zshrc"'
 desc = "프로필 편집"
 
 [[manager.prepend_keymap]]
 on = ["e", "t"]
-run = 'shell "cursor ~/.config/oh-my-posh/dh_theme.toml"'
+run = 'shell "$EDITOR ~/.config/oh-my-posh/dh_theme.toml"'
 desc = "프롬프트 테마 편집"
 
 [[manager.prepend_keymap]]
 on = ["e", "a"]
-run = 'shell "cursor ~/.zshrc"'
+run = 'shell "$EDITOR ~/.zshrc"'
 desc = "오토핫키 편집(윈도우) 수정필요"
 
-# 템플릿 파일 만들기 
+# 템플릿 파일 만들기
 [[manager.prepend_keymap]]
 run = 'shell "mkdir test"'
 on = ["n", "h"]
 desc = "한글 원피양식"
 
-# ! >>> move >>> 
+# ! >>> move >>>
 [[manager.prepend_keymap]]
 on = "<F2>"
 run = 'rename --cursor=before_ext'
@@ -113,14 +114,14 @@ run = 'quit'
 
 
 # open workspaces
-# open sites 
-# python snippets : 파이썬 명령어 
+# open sites
+# python snippets : 파이썬 명령어
 # $n (Unix) / %n (Windows): The N-th selected file, starting from 1. e.g. $2 represents the second selected file.
 # $@ (Unix) / %* (Windows): All selected files, i.e. $1, $2, ..., $n.
 # $0 (Unix) / %0 (Windows): The hovered file.
 
 
 [[input.prepend_keymap]]
-on   = "<Esc>"
-run  = "close"
+on = "<Esc>"
+run = "close"
 desc = "Cancel input"

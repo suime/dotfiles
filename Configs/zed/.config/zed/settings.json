@@ -1,5 +1,6 @@
 {
     // The name of the Zed theme to use for the UI
+    "icon_theme": "Catppuccin Macchiato",
     "language_models": {
         "openai": {
             "version": "1"
@@ -8,7 +9,7 @@
     "auto_update_extensions": {
         "html": false
     },
-    "theme": "Catppuccin Macchiato",
+    "theme": "Catppuccin Macchiato (blue)",
     // The name of a base set of key bindings to use.
     // This setting can take four values, each named after another
     // text editor:
@@ -21,10 +22,10 @@
     // Features that can be globally enabled or disabled
     "features": {
         // Which inline completion provider to use.
-        "inline_completion_provider": "copilot"
+        "edit_prediction_provider": "copilot"
     },
     // The name of a font to use for rendering text in the editor
-    "buffer_font_family": "Zed Mono",
+    "buffer_font_family": "D2CodingLigature Nerd Font Propo",
     // The OpenType features to enable for text in the editor.
     "buffer_font_features": {
         // Disable ligatures:
@@ -183,7 +184,7 @@
         // Whether to show selected symbol occurrences in the scrollbar.
         "selected_symbol": true,
         // Whether to show diagnostic indicators in the scrollbar.
-        "diagnostics": true
+        "diagnostics": "all"
     },
     // What to do when multibuffer is double clicked in some of its excerpts
     // (parts of singleton buffers).
@@ -267,7 +268,7 @@
     },
     "chat_panel": {
         // Whether to show the chat panel button in the status bar.
-        "button": true,
+        "button": "always",
         // Where to the chat panel. Can be 'left' or 'right'.
         "dock": "right",
         // Default width of the chat panel.
@@ -289,8 +290,8 @@
     "assistant": {
         // Version of this setting.
         "default_model": {
-            "provider": "openai",
-            "model": "gpt-4o"
+            "provider": "ollama",
+            "model": "bnksys/eeve-yanolja-v1:latest"
         },
         "version": "2",
         // Whether the assistant is enabled.
@@ -313,7 +314,9 @@
     // The list of language servers to use (or disable) for all languages.
     //
     // This is typically customized on a per-language basis.
-    "language_servers": ["..."],
+    "language_servers": [
+        "..."
+    ],
     // When to automatically save edited buffers. This setting can
     // take four values.
     //
@@ -448,7 +451,9 @@
     "copilot": {
         // The set of glob patterns for which copilot should be disabled
         // in any matching file.
-        "disabled_globs": [".env"]
+        "disabled_globs": [
+            ".env"
+        ]
     },
     // Settings specific to journaling
     "journal": {
@@ -476,13 +481,15 @@
         //           "arguments": ["--login"]
         //         }
         //     }
-        "shell": "system",
+        "shell": {
+            "program": "fish"
+        },
         // Where to dock terminals panel. Can be 'left', 'right', 'bottom'.
         "dock": "bottom",
         // Default width when the terminal is docked to the left or right.
         "default_width": 640,
         // Default height when the terminal is docked to the bottom.
-        "default_height": 320,
+        "default_height": 400,
         // What working directory to use when launching the terminal.
         // May take 4 values:
         // 1. Use the current file's project directory.  Will Fallback to the
@@ -510,7 +517,7 @@
         //         "blinking": "terminal_controlled",
         //  3. Always blink the cursor, ignoring the terminal mode
         //         "blinking": "on",
-        "blinking": "terminal_controlled",
+        "blinking": "on",
         // Set whether Alternate Scroll mode (code: ?1007) is active by default.
         // Alternate Scroll mode converts mouse scroll events into up / down key
         // presses when in the alternate screen (e.g. when running applications
@@ -520,7 +527,7 @@
         //         "alternate_scroll": "on",
         //  2. Default alternate scroll mode to off
         //         "alternate_scroll": "off",
-        "alternate_scroll": "off",
+        "alternate_scroll": "on",
         // Set whether the option key behaves as the meta key.
         // May take 2 values:
         //  1. Rely on default platform handling of option key, on macOS
@@ -528,10 +535,10 @@
         //         "option_to_meta": false,
         //  2. Make the option keys behave as a 'meta' key, e.g. for emacs
         //         "option_to_meta": true,
-        "option_as_meta": false,
+        "option_as_meta": true,
         // Whether or not selecting text in the terminal will automatically
         // copy to the system clipboard.
-        "copy_on_select": false,
+        "copy_on_select": true,
         // Whether to show the terminal button in the status bar
         "button": true,
         // Any key-value pairs added to this list will be added to the terminal's
@@ -550,7 +557,10 @@
         //         "line_height": {
         //           "custom": 2
         //         },
-        "line_height": "comfortable",
+        // "line_height": "standard",
+        "line_height": {
+            "custom": 1.3
+        },
         // Activate the python virtual environment, if one is found, in the
         // terminal's working directory (as resolved by the working_directory
         // setting). Set this to "off" to disable this behavior.
@@ -559,21 +569,26 @@
                 // Default directories to search for virtual environments, relative
                 // to the current working directory. We recommend overriding this
                 // in your project's settings, rather than globally.
-                "directories": [".env", "env", ".venv", "venv"],
+                "directories": [
+                    ".env",
+                    "env",
+                    ".venv",
+                    "venv"
+                ],
                 // Can also be 'csh', 'fish', and `nushell`
                 "activate_script": "default"
             }
         },
         "toolbar": {
             // Whether to display the terminal title in its toolbar.
-            "title": true
+            "title": false
         },
         // Set the terminal's font size. If this option is not included,
         // the terminal will default to matching the buffer's font size.
-        // "font_size": 15,
+        "font_size": 14,
         // Set the terminal's font family. If this option is not included,
         // the terminal will default to matching the buffer's font family.
-        "font_family": "Hack Nerd Font"
+        "font_family": "D2CodingLigature Nerd Font Propo"
         // Sets the maximum number of lines in the terminal's scrollback buffer.
         // Default: 10_000, maximum: 100_000 (all bigger values set will be treated as 100_000), 0 disables the scrolling.
         // Existing terminals will not pick up this change until they are recreated.
@@ -609,7 +624,12 @@
             "format_on_save": "off"
         },
         "Elixir": {
-            "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
+            "language_servers": [
+                "elixir-ls",
+                "!next-ls",
+                "!lexical",
+                "..."
+            ]
         },
         "Gleam": {
             "tab_size": 2
@@ -620,7 +640,12 @@
             }
         },
         "HEEX": {
-            "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
+            "language_servers": [
+                "elixir-ls",
+                "!next-ls",
+                "!lexical",
+                "..."
+            ]
         },
         "Make": {
             "hard_tabs": true
@@ -631,8 +656,20 @@
         "Prisma": {
             "tab_size": 2
         },
+        "Python": {
+            "format_on_save": "on",
+            "tab_size": 4,
+            "hard_tabs": false,
+            "language_servers": [
+                "ruff"
+            ]
+        },
         "Ruby": {
-            "language_servers": ["solargraph", "!ruby-lsp", "..."]
+            "language_servers": [
+                "solargraph",
+                "!ruby-lsp",
+                "..."
+            ]
         }
     },
     // Zed's Prettier integration settings.

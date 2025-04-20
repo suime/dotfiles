@@ -33,5 +33,20 @@ use = "Reledia/hexyl"
 rev = "228a9ef"
 hash = "cdc65cfe4e60e1bf5afe5769d074fa9c"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "b12a9ab"
+hash = "a8e41f245a689dabee8e4ff06483a4eb"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "90e0284"
+hash = "8d4cb2dfadcbda045ddaa5c274441f9c"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "b12a9ab"
+hash = "e0ada736ea676c2bbb3ec705a49526ef"
+
 [flavor]
 deps = []
