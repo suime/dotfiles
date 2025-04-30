@@ -1,4 +1,4 @@
-# export PATH=/usr/local/bin:$HOME/.cargo/bin:~/.local/bin:/opt/homebrew/bin:$PATH
+export PATH=/usr/local/bin:$HOME/.cargo/bin:~/.local/bin:/opt/homebrew/bin:$PATH
 
 # 설정 한방 
 for dir in ~/.config/zsh/{alias,exports,functions}; do
@@ -28,22 +28,19 @@ wifi() {
 }
 alias wifiex="wifi F8:C3:CC:2A:53:B8"
 
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/dh_theme.toml)"
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 # autoload -Uz _zinit
 # (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # (this is currently required for annexes)
-zinit for \
-  light-mode \
-    junegunn/fzf \
-    Aloxaf/fzf-tab \
-    ajeetdsouza/zoxide \
-    zsh-users/zsh-autosuggestions \
-    unixorn/fzf-zsh-plugin \
-    zdharma-continuum/fast-syntax-highlighting 
-    # zsh-users/zsh-syntax-highlighting \
+# zinit for \
+#   light-mode \
+#     junegunn/fzf \
+#     Aloxaf/fzf-tab \
+#     ajeetdsouza/zoxide \
+#     zsh-users/zsh-autosuggestions \
+#     unixorn/fzf-zsh-plugin \
+#     zdharma-continuum/fast-syntax-highlighting 
+#     # zsh-users/zsh-syntax-highlighting \
 
 # source ~/.config/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # fzf --style full \
@@ -60,4 +57,4 @@ source <(fzf --zsh)
 # pokefetch 
 
 # Added by Windsurf
-export PATH="/Users/daehyeon/.codeium/windsurf/bin:$PATH"
+# export PATH="/Users/daehyeon/.codeium/windsurf/bin:/opt/homebrew/bin:$PATH"

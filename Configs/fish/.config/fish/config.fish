@@ -8,34 +8,14 @@ set -gx EDITOR nvim
 set -gx LANG ko_KR.UTF-8
 set -gx LC_ALL ko_KR.UTF-8
 
-# os specific
-
-function tide_dh
-    switch (uname)
-        case Darwin
-            # set tide_os_icon ""
-            # set tide_os_color "a6adc8"
-            # set tide_os_bg_color "b4befe"
-            # set tide_left_prompt_separator_diff_color ""
-            # set tide_left_prompt_separator_same_color ""
-            # set tide_pwd_bg_color 'b4befe'
-            # set tide_pwd_color_anchors 'E4E4E4'
-            # set tide_pwd_color_dirs 'E4E4E4'
-            # set tide_pwd_color_truncated_dirs 'BCBCBC'
-            #tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time=No --rainbow_prompt_separators=Slanted --powerline_prompt_heads=Flat --powerline_prompt_tails=Flat --powerline_prompt_style='Two lines, character' --prompt_connection=Solid --powerline_right_prompt_frame=No --prompt_connection_andor_frame_color=Dark --prompt_spacing=Sparse --icons='Many icons' --transient=Yes
-            abbr -a py --position anywhere python3
-        case Linux
-            abbr -a py --position anywhere python
-        case '*'
-            echo window
-    end
-end
-
 # alias  abbr
+bind \e kill-whole-line
 alias ep "$EDITOR ~/.config/fish/config.fish"
+abbr -a es "$EDITOR ~/.ssh/config"
 abbr -a eb $EDITOR ~/.config/fish/functions/fish_user_key_bindings.fish
 alias et "$EDITOR ~/.config/tmux/tmux.conf"
 alias ey "$EDITOR ~/.config/yazi/yazi.toml"
+alias ez "$EDITOR ~/.config/zellij/config.kdl"
 alias re "source ~/.config/fish/config.fish"
 alias ㅊ clear
 alias c clear
@@ -54,7 +34,7 @@ abbr -a cnt --position anywhere count
 abbr -a ca cargo
 
 # eza
-set -g EZA_CONFIG_HOME ~/.config/eza
+set -gx EZA_CONFIG_HOME ~/.config/eza
 alias ls "eza --icons=always --hyperlink --group-directories-first -w=80 --ignore-glob=@eaDir"
 alias ll "eza -l --icons=always --hyperlink -a -h --no-user --ignore-glob=@eaDir \
 --time-style='+%Y.%m.%d %H:%M' --group-directories-first --color-scale=all --color-scale-mode=gradient"
@@ -143,3 +123,20 @@ function y
 end
 
 # >>> yt-dlp
+
+# wifi
+function wifi -d "맥주소 변경"
+    set -l mac $argv[1]
+    sudo ifconfig en0 ether $mac
+end
+alias wifiex "wifi F8:C3:CC:2A:53:B8"
+alias wifino "wifi 66:5F:13:40:37:7A"
+alias wifi1 "wifi ac:c9:06:08:31:ec"
+function chat -d "claude chat"
+    set -l ask $argv[1]
+    set -l json (printf '{"id": "qkqxk500", "input": "%s"}' "$ask")
+    set -l res (curl -s -X POST "http://59.24.191.180:5004/end" \
+        -H "Content-Type: application/json" \
+        -d $json)
+    echo $res
+end

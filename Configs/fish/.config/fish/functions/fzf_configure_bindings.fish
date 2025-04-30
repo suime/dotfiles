@@ -44,3 +44,5 @@ function fzf_configure_bindings --description "Installs the default key bindings
         end
     end
 end
+
+fzf_configure_bindings

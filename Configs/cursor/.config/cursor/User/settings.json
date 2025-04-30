@@ -27,7 +27,7 @@
   },
   "redhat.telemetry.enabled": false,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": false
   },
   "security.workspace.trust.untrustedFiles": "open",
@@ -195,5 +195,8 @@
   "editor.maxTokenizationLineLength": 40000,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "terminal.integrated.macOptionIsMeta": true,
+  "terminal.external.osxExec": "iterm2.app",
+  "terminal.integrated.defaultProfile.osx": "zsh"
 }
