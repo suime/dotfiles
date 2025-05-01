@@ -122,7 +122,9 @@ function y
     rm -f -- "$tmp"
 end
 
-# >>> yt-dlp
+# >>> zellij
+abbr -a za "zellij a"
+abbr -a zz zellij
 
 # wifi
 function wifi -d "맥주소 변경"

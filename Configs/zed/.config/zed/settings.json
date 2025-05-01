@@ -407,9 +407,9 @@
     // Control what info is collected by Zed.
     "telemetry": {
         // Send debug info like crash reports.
-        "diagnostics": true,
+        "diagnostics": false,
         // Send anonymized usage data like what languages you're using Zed with.
-        "metrics": true
+        "metrics": false
     },
     // Automatically update Zed
     "auto_update": true,
@@ -672,8 +672,6 @@
             ]
         }
     },
-    // Zed's Prettier integration settings.
-    // If Prettier is enabled, Zed will use this for its Prettier instance for any applicable file, if
     // project has no other Prettier installed.
     "prettier": {
         // Use regular Prettier json configuration:
@@ -684,15 +682,19 @@
     },
     // LSP Specific settings.
     "lsp": {
-        // Specify the LSP name as a key here.
-        // "rust-analyzer": {
-        //     // These initialization options are merged into Zed's defaults
-        //     "initialization_options": {
-        //         "check": {
-        //             "command": "clippy" // rust-analyzer.check.command (default: "check")
-        //         }
-        //     }
-        // }
+        "ruff": {
+            "initialization_options": {
+                "settings": {
+                    // Ruff server settings goes here
+                    "lineLength": 80,
+                    "lint": {
+                        "extendSelect": [
+                            "I"
+                        ],
+                    }
+                }
+            }
+        }
     },
     // Vim settings
     "vim": {
@@ -700,7 +702,6 @@
         "use_multiline_find": false,
         "use_smartcase_find": false
     },
-    // The server to connect to. If the environment variable
     // ZED_SERVER_URL is set, it will override this setting.
     "server_url": "https://zed.dev",
     // Settings overrides to use when using Zed Preview.
@@ -708,13 +709,9 @@
     "preview": {
         // "theme": "Andromeda"
     },
-    // Settings overrides to use when using Zed Nightly.
-    // Mostly useful for developers who are managing multiple instances of Zed.
     "nightly": {
         // "theme": "Andromeda"
     },
-    // Settings overrides to use when using Zed Stable.
-    // Mostly useful for developers who are managing multiple instances of Zed.
     "stable": {
         // "theme": "Andromeda"
     },

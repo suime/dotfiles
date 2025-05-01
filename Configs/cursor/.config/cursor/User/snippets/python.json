@@ -95,13 +95,13 @@
 	},
 	"pd.to ": {
 		"prefix": [
-			".to_csv",
-			".to",
-			".ㅅㅐ",
-			".세"
+			"to_csv",
+			"to",
+			"ㅅㅐ",
+			"세"
 		],
 		"body": [
-			".to_${1|csv,parquet,excel|}('$2.$1', index = False)"
+			"to_${1|csv,parquet,excel|}('$2.$1', index = False)"
 		],
 		"description": "to_someThing"
 	},
@@ -135,36 +135,36 @@
 		"description": "디스크립션"
 	},
 	"agg": {
-		"prefix": ".agg",
+		"prefix": "agg",
 		"body": [
-			".agg(건수 = ('$1', 'count')).reset_index()",
+			"agg(건수 = ('$1', 'count')).reset_index()",
 		],
 		"description": "건수"
 	},
 	"format": {
 		"prefix": "format",
 		"body": [
-			".apply(lambda x : '{:,.0f}'.format(x))",
+			"apply(lambda x : '{:,.0f}'.format(x))",
 		],
 		"description": "세자리마다 쉼표 넣기"
 	},
 	"query": {
 		"prefix": [
-			".qq",
-			".ㅂㅂ"
+			"qq",
+			"ㅂㅂ"
 		],
 		"body": [
-			".query(\"$1 == $2\")",
+			"query(\"$1 == $2\")",
 		],
 		"description": "쿼리"
 	},
 	"그룹바이": {
 		"prefix": [
-			".groupby",
-			".ㅎㄱㅐㅕㅔ"
+			"groupby",
+			"ㅎㄱㅐㅕㅔ"
 		],
 		"body": [
-			".groupby([$1]).agg(건수 = ('$2','count')).reset_index()",
+			"groupby([$1]).agg(건수 = ('$2','count')).reset_index()",
 		],
 		"description": "그룹바이"
 	},
@@ -371,12 +371,12 @@
 	},
 	"values_counts": {
 		"prefix": [
-			".ㅍㅁ",
-			".ㅍ미",
-			".value"
+			"ㅍㅁ",
+			"ㅍ미",
+			"value"
 		],
 		"body": [
-			".value_counts()",
+			"value_counts()",
 		],
 		"description": "발루카운트"
 	},
