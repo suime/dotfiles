@@ -148,6 +148,7 @@ keybinds clear-defaults=true {
         bind "Alt i" { MoveTab "left"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
+        bind "Alt x" { CloseFocus; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "move" {
