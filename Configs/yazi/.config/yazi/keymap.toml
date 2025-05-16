@@ -1,6 +1,10 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 # >>> goto >>>
 [[manager.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block'
+desc = "쉘 열기"
+[[manager.prepend_keymap]]
 on = ["C"]
 run = "plugin ouch"
 desc = "압축하기"

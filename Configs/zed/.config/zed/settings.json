@@ -1,5 +1,19 @@
 {
     // The name of the Zed theme to use for the UI
+    "ssh_connections": [
+        {
+            "host": "59.24.191.180",
+            "username": "qkqxk500",
+            "port": 3070,
+            "projects": [
+                {
+                    "paths": [
+                        "~/08_Code"
+                    ]
+                }
+            ]
+        }
+    ],
     "icon_theme": "Catppuccin Macchiato",
     "language_models": {
         "openai": {
@@ -256,7 +270,7 @@
         "auto_reveal_entries": true,
         /// Whether to fold directories automatically
         /// when a directory has only one directory inside.
-        "auto_fold_dirs": false
+        "auto_fold_dirs": true
     },
     "collaboration_panel": {
         // Whether to show the collaboration panel button in the status bar.
@@ -287,7 +301,7 @@
         // Default width of the notification panel.
         "default_width": 380
     },
-    "assistant": {
+    "agent": {
         // Version of this setting.
         "default_model": {
             "provider": "anthropic",
@@ -690,7 +704,7 @@
                     "lint": {
                         "extendSelect": [
                             "I"
-                        ],
+                        ]
                     }
                 }
             }

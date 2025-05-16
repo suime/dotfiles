@@ -190,7 +190,8 @@
         "bindings": {
             "alt-]": "editor::NextEditPrediction",
             "alt-[": "editor::PreviousEditPrediction",
-            "alt-right": "editor::AcceptPartialEditPrediction"
+            "alt-enter": "editor::AcceptPartialEditPrediction",
+            "cmd-enter": "editor::AcceptEditPrediction"
         }
     },
     {

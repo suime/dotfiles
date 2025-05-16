@@ -29,6 +29,7 @@ abbr -a ㅛ yazi
 abbr -a ip ifconfig
 abbr -a cls clear
 abbr -a cnt --position anywhere count
+abbr -a br brew
 
 # cargo
 abbr -a ca cargo
@@ -110,7 +111,7 @@ set TUCKR_TARGET "$HOME"
 
 # python
 set PYTHONIOENCODING UTF-8
-
+abbr -a py python
 # >>> yazi
 set YAZI_CONFIG_HOME "~/.config/yazi"
 function y
